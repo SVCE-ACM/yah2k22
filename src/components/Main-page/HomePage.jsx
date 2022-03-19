@@ -1,0 +1,112 @@
+import React from 'react';
+import { Myinfo } from '../Top-division-components/Top-division-components.jsx';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import './about.css';
+import { TopSection } from '../top-section/TopSection.jsx';
+import { Heading } from '../heading/heading.jsx';
+import { Accordion } from '../FAQ/faq.jsx';
+import { Sponsor, SponsorsHead, SponsorUS } from '../Sponsors/sponsors.jsx';
+
+import { Box } from '@material-ui/core';
+
+import Footer from '../Footer/footer.jsx';
+
+import { sponsorLogos, frequentlyAskedQuestions } from '../../Module/General';
+
+// javascript Map for sponsors
+
+function SponsorGroup(props) {
+  return (
+    <Row>
+      {props.map((s) => (
+        <Col className='' sm={12} lg={4} md={6}>
+          {' '}
+          <Sponsor srcx={s.src} />{' '}
+        </Col>
+      ))}
+    </Row>
+  );
+}
+
+function FrequentlyAsked(props) {
+  return (
+    <Row className='sf'>
+      {props.map((s) => (
+        <Col className='' sm={12} lg={6} md={6}>
+          <Accordion panels={s} />
+        </Col>
+      ))}
+    </Row>
+  );
+}
+
+export default function HomePage(props) {
+  return (
+    <div className='Whole_div'>
+      <div className='color_sectiom' id='home'>
+        <Container fluid>
+          <Row className='Row info'>
+            <Col className='info-div' sm={12} lg={7} md={8}>
+              <Myinfo />
+            </Col>
+            <Col className='d-image' sm={12} lg={5} md={4}>
+              {
+                // add yah image here
+              }
+              {/* <img src={TOP_SECTION.IMG_SRC} /> */}
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <Container fluid>
+        {/* First section */}
+        <Row className='logoSection'>
+          <Col className='info-div' sm={12} lg={8} md={8}>
+            <TopSection />
+          </Col>
+        </Row>
+        {/* ********Domains here ***** */}
+        <Box m={10} />
+        <Row className='prizesection' id='domains'>
+          <Heading type='Domains' />
+          {/* {Prizeinfo.map(PrizeGroup)} */}
+        </Row>
+        {/* ********Format here ***** */}
+        <Box m={10} />
+        <Row className='prizesection' id='format'>
+          <Heading type='Format' />
+          {/* {Prizeinfo.map(PrizeGroup)} */}
+        </Row>
+
+        <Box m={5} />
+        {/* ********Frequently asked Questions here ***** */}
+        <div className='Myfaqs' id='faq'>
+          <Heading type='FAQs' />
+
+          {frequentlyAskedQuestions.map(FrequentlyAsked)}
+          {/* ********Frequently asked Questions ending here ***** */}
+        </div>
+
+        {/* ********Sponsors here ***** */}
+
+        <Row className='sponsorSection' id='sponsors'>
+          <SponsorsHead />
+          <SponsorUS />
+          {sponsorLogos.map(SponsorGroup)}
+        </Row>
+        {/* ********Sponsors ending here ***** */}
+
+        {
+          //contact
+        }
+        <Row id='contact'>
+          <h1>Contact </h1>
+          <h3>Still got questions? Get in touch with us</h3>
+        </Row>
+      </Container>
+      <Footer />
+    </div>
+  );
+}

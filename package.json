@@ -1,25 +1,62 @@
 {
   "name": "yah2k22",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
   "dependencies": {
-    "@emotion/react": "^11.8.2",
-    "@emotion/server": "^11.4.0",
-    "@emotion/styled": "^11.8.1",
-    "@mui/material": "^5.5.1",
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-scroll": "^1.8.6"
+    "@material-ui/core": "^4.12.1",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.13.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "babel": "^6.23.0",
+    "bootstrap": "^4.6.0",
+    "express": "^4.17.1",
+    "node-sass": "^6.0.1",
+    "prettier": "^2.3.2",
+    "prettierrc": "0.0.0-5",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-countdown": "^2.3.2",
+    "react-dom": "^17.0.2",
+    "react-responsive": "^9.0.0-beta.5",
+    "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.4.3",
+    "react-error-overlay": "6.0.9",
+    "react-scripts": "4.0.3",
+    "react-typed": "^1.2.0",
+    "styled-components": "^5.3.3",
+    "typed.js": "^2.0.12",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0"
-  }
+    "gh-pages": "^3.2.3"
+  },
+  "main": "index.js"
 }
