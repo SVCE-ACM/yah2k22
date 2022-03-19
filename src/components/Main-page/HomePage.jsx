@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import './about.css';
 import { TopSection } from '../top-section/TopSection.jsx';
+import Domains from '../domains/Domains.jsx';
+import Format from '../format/Format.jsx';
 import { Heading } from '../heading/heading.jsx';
 import { Accordion } from '../FAQ/faq.jsx';
 import { Sponsor, SponsorsHead, SponsorUS } from '../Sponsors/sponsors.jsx';
@@ -71,13 +73,13 @@ export default function HomePage(props) {
         <Box m={10} />
         <Row className='prizesection' id='domains'>
           <Heading type='Domains' />
-          {/* {Prizeinfo.map(PrizeGroup)} */}
+          <Domains />
         </Row>
         {/* ********Format here ***** */}
         <Box m={10} />
         <Row className='prizesection' id='format'>
           <Heading type='Format' />
-          {/* {Prizeinfo.map(PrizeGroup)} */}
+          <Format />
         </Row>
 
         <Box m={5} />
