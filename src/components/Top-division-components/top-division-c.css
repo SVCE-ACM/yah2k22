@@ -19,7 +19,7 @@ button {
 }
 
 .register {
-  margin-left: 9rem;
+  margin-left: 15rem;
   width: 22rem;
   height: 6rem;
   border: 2px solid rgb(255, 255, 255);
@@ -40,6 +40,10 @@ p {
 .Myinfo {
   text-align: left;
   margin-left: 10vh;
+}
+
+.registerButton {
+  margin-left: 50px;
 }
 
 .Myinfo p {
@@ -99,6 +103,7 @@ button:hover .overlay {
   .Myinfo p {
     font-size: 1.9rem;
   }
+
   .AboutMe {
     text-align: center;
   }
@@ -111,6 +116,9 @@ button:hover .overlay {
   }
   .AboutMe h1 {
     font-size: 2.2em;
+  }
+  .registerButton {
+    margin-left: 0px;
   }
   .Myinfo p {
     font-size: 1.6rem;

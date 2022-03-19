@@ -29,18 +29,18 @@ function Myinfo() {
   return (
     <div className='Myinfo'>
       <About />
-      <p> {TOP_SECTION.SHORT_DESCRIPTION}</p>
-      <div className='join_dis'></div>
-      <div className='join_dis'></div>
       <div className='join_dis' style={{ color: '#222944' }}>
         {' '}
         h
       </div>
 
-      <a
-        href={TOP_SECTION.HACKERS_REGISTRATION_FORM_LINK}
-        style={{ marginTop: '20px', marginLeft: '30px' }}
-      >
+      <p> {TOP_SECTION.SHORT_DESCRIPTION}</p>
+      <div className='join_dis' style={{ color: '#222944' }}>
+        {' '}
+        h
+      </div>
+
+      <a href={TOP_SECTION.HACKERS_REGISTRATION_FORM_LINK}>
         <Btn
           style={{
             width: '22rem',

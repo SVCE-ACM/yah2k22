@@ -32,6 +32,14 @@ const MIDDLE_SECTION = {
   LOGO: '',
 };
 
+const Domain = [
+  'lorem ipsum',
+  'ipsum lorem',
+  'Road safety and motor vehicles',
+  'blockchain',
+  'Artificial Intelligence',
+];
+
 /** Instructions
  * Only put 3 logos per array inside `sponsorLogos`, you can
  * create as many arrays you want all logos will be rendered
@@ -100,6 +108,7 @@ export {
   TOP_SECTION,
   MIDDLE_SECTION,
   SOCIALS,
+  Domain,
   sponsorLogos,
   frequentlyAskedQuestions,
 };
