@@ -13,6 +13,8 @@ import {
 } from '@material-ui/core';
 import { HashLink as Link } from 'react-router-hash-link';
 
+import AcmImage from '../../Module/Assets/acm/acm-logo.png';
+
 const useStyles = makeStyles((theme) => ({
   spacing: {
     paddingLeft: theme.spacing(1),
@@ -82,7 +84,14 @@ const CustomAppbar = () => {
             marginLeft: 'auto',
           }}
         >
-          {/* <Image src='/logo.svg' alt='Logo' height={35} width={35} /> */}
+          <img
+            src={AcmImage}
+            alt='acm logo'
+            style={{
+              height: '50px',
+              width: '50px',
+            }}
+          />
 
           <Typography
             variant='h4'

@@ -17,6 +17,8 @@ import Footer from '../Footer/footer.jsx';
 
 import { sponsorLogos, frequentlyAskedQuestions } from '../../Module/General';
 
+import AcmSvce from '../../Module/Assets/acm/svce-acm.jpeg';
+
 // javascript Map for sponsors
 
 function SponsorGroup(props) {
@@ -65,8 +67,29 @@ export default function HomePage(props) {
       <Container fluid>
         {/* First section */}
         <Row className='logoSection'>
-          <Col className='info-div' sm={12} lg={8} md={8}>
+          <Col className='info-div' sm={12} lg={6} md={6}>
             <TopSection />
+          </Col>
+          <Col sm={12} lg={6} md={6}>
+            <div
+              style={{
+                height: '315px',
+                // marginTop: '30px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <img
+                src={AcmSvce}
+                style={{
+                  width: '435px',
+                  height: '150px',
+                }}
+                alt='acm-svce'
+              />
+            </div>
           </Col>
         </Row>
         {/* ********Domains here ***** */}
