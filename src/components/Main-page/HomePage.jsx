@@ -86,10 +86,10 @@ export default function HomePage() {
               <img
                 src={AcmSvce}
                 style={{
-                  width: '435px',
-                  height: '150px',
-                  paddingLeft: match ? '30px' : '0px',
-                  paddingRight: match ? '30px' : '0px',
+                  width: match ? '335px' : '435px',
+                  height: '140px',
+                  // paddingLeft: match ? '30px' : '0px',
+                  // paddingRight: match ? '30px' : '0px',
                 }}
                 alt='acm-svce'
               />
