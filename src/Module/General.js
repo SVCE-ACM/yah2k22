@@ -68,7 +68,7 @@ const frequentlyAskedQuestions = [
       {
         label: 'Who can attend?',
         content:
-          'Limbo Hacks is open to all undergraduate, high school students and middle school students from all schools.',
+          'It is open to all undergraduate, high school students and middle school students from all schools.',
       },
       {
         label: 'I am a first time hacker, what should I do?',
