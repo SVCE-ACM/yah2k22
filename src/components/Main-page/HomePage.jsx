@@ -11,7 +11,7 @@ import { Heading } from '../heading/heading.jsx';
 import { Accordion } from '../FAQ/faq.jsx';
 import { Sponsor, SponsorsHead, SponsorUS } from '../Sponsors/sponsors.jsx';
 
-import { Box } from '@material-ui/core';
+import { Box, useTheme, useMediaQuery } from '@material-ui/core';
 
 import Footer from '../Footer/footer.jsx';
 
@@ -46,7 +46,9 @@ function FrequentlyAsked(props) {
   );
 }
 
-export default function HomePage(props) {
+export default function HomePage() {
+  const theme = useTheme();
+  const match = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <div className='Whole_div'>
       <div className='color_sectiom' id='home'>
@@ -86,6 +88,8 @@ export default function HomePage(props) {
                 style={{
                   width: '435px',
                   height: '150px',
+                  paddingLeft: match ? '30px' : '0px',
+                  paddingRight: match ? '30px' : '0px',
                 }}
                 alt='acm-svce'
               />

@@ -21,6 +21,10 @@ h1 {
   text-align: center;
 }
 
+.svceacm {
+  width: '435px';
+}
+
 .info {
   margin-top: 7vh;
   color: white;
@@ -72,6 +76,11 @@ h1 {
   .mediaInfo {
     margin-top: 0;
   }
+  .svceacm {
+    /* width: '435px'; */
+    margin: 30px;
+  }
+
   .Whole_div {
     background-size: auto 100vh;
   }
