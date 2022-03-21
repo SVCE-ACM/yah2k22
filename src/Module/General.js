@@ -7,9 +7,10 @@
 
 const TOP_SECTION = {
   TITLE: 'Yet Another Hackathon! 2k22',
-  Typed_effect: ['sed do eiusmod tempor ', 'tempora incidunt ut labore'],
+  Typed_effect: [' 23rd and 24th of April, 2022', '24-hour hackathon'],
   SHORT_DESCRIPTION:
-    'quasi architecto beatae vitae dicta sunt explicabo. Nemo enit asperna cui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet',
+    'Yet Another Hackathon 2k22, is the third edition of YAH conducted by the SVCE ACM Student Chapter. Gear up for the 24-hour hackathon that will be conducted on 23rd and 24th of April, 2022!',
+
   IMG_SRC: '',
   HACKERS_REGISTRATION_FORM_LINK: 'https://localhost:3000',
 };
@@ -26,18 +27,20 @@ const SOCIALS = {
 const MIDDLE_SECTION = {
   TITLE: 'About YAH! 2k22',
   LONG_DESCRIPTION:
-    'quasi architecto beatae vit vitae dicta sunt explicabo vitae dicta sunt explicabo vitae dicta sunt explicabo vitae dicta sunt explicabo vitae dicta sunt explicaboae dicta sunt explicabo vitae dicta sunt explicabo vitae dicta sunt explicabo vitae dicta sunt explicabo. Nemo enit asperna cui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet',
+    "YAH '22, Yet Another Hackathon is a 24-hour student-run hackathon aimed at students in the field. Eager students with varying levels of programming and conceptual expertise will gather to create products and solutions for today’s challenges. Participants can select any problem statement of their choice from the list of domains provided. YAH'22 will offer attendees an inclusive, diverse environment to share unique ideas and make them realities.",
 
   LOGO_EFFECT: true,
   LOGO: '',
 };
 
 const Domain = [
-  'lorem ipsum',
-  'ipsum lorem',
-  'Road safety and motor vehicles',
-  'blockchain',
-  'Artificial Intelligence',
+  'Agriculture, FoodTech & Rural Development',
+  'Clean & Green Technology',
+  'Blockchain & Cybersecurity',
+  'MedTech / BioTech / HealthTech',
+  'Fitness & Sports',
+  'Smart Vehicles/ Smart Education',
+  'Finance and technology',
 ];
 
 /** Instructions
@@ -62,43 +65,48 @@ const frequentlyAskedQuestions = [
       {
         label: 'What is a hackathon?',
         content:
-          'A hackathon is a 24 hour event where "hackers" all over the globe will collaborate on creating a functioning software and hardware by the end of the event.',
+          'A hackathon is an event, where young creative minds come together  to collaborate on projects related to software and hardware. The creativity of the participants are put to the test as they come up with creative solutions for problems.',
       },
 
       {
         label: 'Who can attend?',
         content:
-          'It is open to all undergraduate, high school students and middle school students from all schools.',
+          'YAH 2022 is open to all engineering students, looking to build up a strong career in coding.',
+      },
+      {
+        label: 'What is the judging criteria?',
+        content:
+          "Our judges will be evaluating teams on the 3 I's - Innovation (Originality & Creativity of the idea), Implementation (Technical challenge & completeness of the project), and Impact (Business or Social Impact).",
       },
       {
         label: 'I am a first time hacker, what should I do?',
         content:
-          'No worries, we love to welcome first time hackers and start their hacking journey from a hackathon. We have some awesome workshops and events which will help you get started with hackathon and hacking in general.',
+          'It is never too late to start something new. To begin with, knowledge of basic programming in c/c++/ python/ java is good enough to get you started.',
       },
       {
         label: 'How team formation works?',
         content:
-          "You can form team with 4 members in it at maximum. If you don't have a team, there'll be plenty of opportunities for you to meet hackers and form a team!",
+          'A team of minimum 3 to maximum 5 members will have to work together for 24 hours to create prototype solutions to real world problems.',
       },
     ],
     [
       {
-        label: 'How to register myself in the hackathon?',
+        label: 'How do I register?',
         content:
-          'All you need is to fill our form above and join Discord, we will guide you through everything there',
+          'Registrations will be open from 1st April on our website. Stay tuned!',
+      },
+      {
+        label: 'Is there Wi-Fi?',
+        content: 'Of course!',
       },
       {
         label: 'I have more questions?',
-        content: 'Reach us directly at we would happy to help you.',
+        content: 'Feel free to contact our team at acm.svcecse@gmail.com.',
       },
       {
-        label: 'Can i volunteer?',
+        label: 'Will we get help if we face any issues?',
         content:
-          'Yes we are actively looking for volunteers, fill the form (in footer section) we will be glad to have you.',
-      },
-      {
-        label: 'Will there be swag?',
-        content: 'Yes!',
+          'Yes, we have mentors from different fields to help you during the event.',
       },
     ],
   ],
