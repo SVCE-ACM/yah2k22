@@ -1,6 +1,6 @@
 import React from 'react';
 import './top-division-c.css';
-// import MytypedComponent from '../typing-effect/typing.js';
+import MytypedComponent from '../typing-effect/typing.js';
 
 import { TOP_SECTION } from '../../Module/General';
 
@@ -20,7 +20,7 @@ function About() {
   return (
     <div className='AboutMe'>
       <h2>{TOP_SECTION.TITLE}</h2>
-      {/* <MytypedComponent /> */}
+      <MytypedComponent />
     </div>
   );
 }
@@ -29,18 +29,16 @@ function Myinfo() {
   return (
     <div className='Myinfo'>
       <About />
-      <div className='join_dis' style={{ color: '#222944' }}>
-        {' '}
+      {/* <div className='join_dis' style={{ color: '#222944' }}>
         h
-      </div>
+      </div> */}
 
       <p> {TOP_SECTION.SHORT_DESCRIPTION}</p>
-      <div className='join_dis' style={{ color: '#222944' }}>
-        {' '}
+      {/* <div className='join_dis' style={{ color: '#222944' }}>
         h
-      </div>
+      </div> */}
 
-      <a href={TOP_SECTION.HACKERS_REGISTRATION_FORM_LINK}>
+      <a href={TOP_SECTION.HACKERS_REGISTRATION_FORM_LINK} style={{}}>
         <Btn
           style={{
             width: '22rem',

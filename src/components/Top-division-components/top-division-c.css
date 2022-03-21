@@ -22,6 +22,7 @@ button {
   margin-left: 15rem;
   width: 22rem;
   height: 6rem;
+  margin-top: 25px;
   border: 2px solid rgb(255, 255, 255);
   background-color: transparent;
 }
