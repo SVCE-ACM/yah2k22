@@ -19,9 +19,9 @@ const SOCIALS = {
   instagram: 'https://www.instagram.com/svceacm/',
   github: 'https://github.com/SVCE-ACM',
   facebook: 'https://www.facebook.com/SVCEACM/',
-  email: 'mailto:contact@svce.acm.org',
-  mail: 'contact@svce.acm.org',
-  sponsor: 'mailto:sponsors@svce.acm.org',
+  email: 'mailto:acm.svcecse@gmail.com',
+  mail: 'acm.svcecse@gmail.com',
+  sponsor: 'mailto:acm.svcecse@gmail.com',
 };
 
 const MIDDLE_SECTION = {
