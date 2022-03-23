@@ -19,13 +19,11 @@ const Format = () => {
         problem solving skills and creativity. Your Github links (Or GitLab,
         BitBucket or even HackerRank) will sell us on your coding proficiency.
         If you don't have one of those, link us to something else that you've
-        made. Maybe an app or a website. Registrations close at 11:59 PM, 17th
-        September 2019. So don't delay too much.
+        made. Maybe an app or a website.
       </p>
       <h2>2. The 24-Hour Hackathon</h2>
       <p>
-        This is the on-site hackathon taking place at Cove, Kotturpuram from
-        21st to 22nd September 2019. We'll give you all the required information
+        This is the on-site hackathon. We'll give you all the required information
         regarding this if you do get selected for the round. But check out our
         FAQ which should cover most of your questions.
       </p>
