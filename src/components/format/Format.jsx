@@ -13,7 +13,7 @@ const Format = () => {
       <h2>1. Online Screening Round</h2>
       <p>
         There's no special work needed for this round. Just fill in the
-        registration form as usual. For the abstract, pick a domain of your
+        registration form once the registrations open. For the abstract, pick a domain of your
         choice and submit an idea. Note that you don't need to implement the
         same idea at the hackathon. We will simply use this to judge your
         problem solving skills and creativity. Your Github links (Or GitLab,
@@ -23,7 +23,7 @@ const Format = () => {
       </p>
       <h2>2. The 24-Hour Hackathon</h2>
       <p>
-        This is the on-site hackathon. We'll give you all the required information
+        This is an on-site hackathon. We'll give you all the required information
         regarding this if you do get selected for the round. But check out our
         FAQ which should cover most of your questions.
       </p>
