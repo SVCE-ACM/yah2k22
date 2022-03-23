@@ -15,7 +15,11 @@ import { Box, useTheme, useMediaQuery } from '@material-ui/core';
 
 import Footer from '../Footer/footer.jsx';
 
-import { sponsorLogos, frequentlyAskedQuestions } from '../../Module/General';
+import {
+  sponsorLogos,
+  frequentlyAskedQuestions,
+  TOP_SECTION,
+} from '../../Module/General';
 
 import AcmSvce from '../../Module/Assets/acm/svce-acm.jpeg';
 
@@ -61,7 +65,7 @@ export default function HomePage() {
               {
                 // add yah image here
               }
-              {/* <img src={TOP_SECTION.IMG_SRC} /> */}
+              {/* <img src={TOP_SECTION.IMG_SRC} alt='YAH! 2k22' /> */}
             </Col>
           </Row>
         </Container>
@@ -131,7 +135,14 @@ export default function HomePage() {
           //contact
         }
         <Row id='contact'>
-          <h1>Contact </h1>
+          <h3
+            style={{
+              fontWeight: 'bold',
+              fontSize: '3.5rem',
+            }}
+          >
+            Contact
+          </h3>
           <h3>Still got questions? Get in touch with us</h3>
         </Row>
       </Container>

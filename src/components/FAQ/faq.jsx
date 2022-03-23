@@ -19,7 +19,7 @@ class Panel extends React.Component {
       this.setState({
         height,
       });
-    }, 433);
+    }, 553);
   }
 
   render() {

@@ -16,8 +16,9 @@
 }
 
 .shead {
-  font-size: 6rem;
-  margin-bottom: 6rem;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
   margin-top: -3rem;
 }
 
@@ -29,6 +30,9 @@
 @media (max-width: 570px) {
   .shead {
     margin-top: 0;
+    margin-bottom: 4rem;
+    font-size: 3.5rem;
+    font-weight: bold;
   }
   .Sponsor img {
     margin-bottom: 3rem;
