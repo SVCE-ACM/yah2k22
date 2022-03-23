@@ -7,9 +7,9 @@
 
 const TOP_SECTION = {
   TITLE: 'Yet Another Hackathon! 2k22',
-  Typed_effect: [' 23rd and 24th of April, 2022', '24-hour hackathon'],
+  Typed_effect: ['YAH! 2k22', '24-hour hackathon'],
   SHORT_DESCRIPTION:
-    'Yet Another Hackathon 2k22, is the third edition of YAH conducted by the SVCE ACM Student Chapter. Gear up for the 24-hour hackathon that will be conducted on 23rd and 24th of April, 2022!',
+    'Yet Another Hackathon 2k22, is the third edition of YAH conducted by the SVCE ACM Student Chapter. Gear up for the 24-hour hackathon!',
 
   IMG_SRC: '',
   HACKERS_REGISTRATION_FORM_LINK: 'https://localhost:3000',
