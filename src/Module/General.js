@@ -1,5 +1,7 @@
 // Importing all sponsors logos from Assets
 
+import YahLogo from './Assets/acm/yahlogo.png';
+
 /** Put all your sponsors logo inside folder `sponsorLogos`
  * and import them in the above and update `src` in sponsorLogos
  * or you can provide a cloud link in src
@@ -11,7 +13,7 @@ const TOP_SECTION = {
   SHORT_DESCRIPTION:
     'Yet Another Hackathon 2k22, is the third edition of YAH conducted by the SVCE ACM Student Chapter. Gear up for the 24-hour hackathon!',
 
-  IMG_SRC: '',
+  IMG_SRC: YahLogo,
   HACKERS_REGISTRATION_FORM_LINK: 'https://localhost:3000',
 };
 

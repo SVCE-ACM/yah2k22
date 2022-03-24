@@ -31,7 +31,9 @@ h1 {
 }
 
 .d-image img {
-  width: 100%;
+  margin-top: 6rem;
+  width: 65%;
+  height: 45%;
   position: relative;
   transition: 0.3s;
   top: 0px;
@@ -79,6 +81,15 @@ h1 {
   .svceacm {
     /* width: '435px'; */
     margin: 30px;
+  }
+  .d-image img {
+    margin-top: 5rem;
+    width: 90%;
+    height: 35%;
+    position: relative;
+    transition: 0.3s;
+    top: 0px;
+    transition: top 0.2s linear;
   }
 
   .Whole_div {

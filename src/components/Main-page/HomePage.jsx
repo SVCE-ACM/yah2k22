@@ -65,7 +65,7 @@ export default function HomePage() {
               {
                 // add yah image here
               }
-              {/* <img src={TOP_SECTION.IMG_SRC} alt='YAH! 2k22' /> */}
+              <img src={TOP_SECTION.IMG_SRC} alt='YAH! 2k22' />
             </Col>
           </Row>
         </Container>
