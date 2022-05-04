@@ -95,7 +95,7 @@ const frequentlyAskedQuestions = [
       {
         label: 'How do I register?',
         content:
-          'Registrations will be open from 1st April on our website. Stay tuned!',
+          'Registration opens soon. Stay tuned!',
       },
       {
         label: 'Is there Wi-Fi?',
