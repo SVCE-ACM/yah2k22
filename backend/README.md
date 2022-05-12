@@ -2,9 +2,9 @@
 
 ## The request
 
-``json
-{
+ ```
 
+{
 team_name: "",  /* Required and unique */
 count: 3, /* Min. 3 */
 domain: "",  /*choice */
@@ -27,14 +27,9 @@ member2: {
     gender: "",  /*choice */
     github_url: "",
 },
-
-    .
-    .
-    .
-
 }
 
-``
+```
 
 
 ## Table Schema
