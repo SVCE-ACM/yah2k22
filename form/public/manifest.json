@@ -1,0 +1,15 @@
+{
+  "short_name": "Register | YAH! 2k22",
+  "name": "Register | YAH! 2k22",
+  "icons": [
+    {
+      "src": "acm-logo.png",
+      "type": "image/png",
+      "sizes": "640x640"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
