@@ -13,6 +13,8 @@ import {
 } from '@material-ui/core';
 import { HashLink as Link } from 'react-router-hash-link';
 
+import { useLocation, useHistory } from 'react-router-dom';
+
 import AcmImage from '../../Module/Assets/acm/acm-logo.png';
 
 const useStyles = makeStyles((theme) => ({
@@ -41,6 +43,8 @@ function ElevationScroll(props) {
 const CustomAppbar = () => {
   const [scrollPos, setScrollPos] = useState(0);
   const classes = useStyles();
+  const location = useLocation();
+  const router = useHistory();
 
   useEffect(() => {
     let computeProgress = () => {
@@ -84,105 +88,122 @@ const CustomAppbar = () => {
             marginLeft: 'auto',
           }}
         >
-          <img
-            src={AcmImage}
-            alt='acm logo'
-            style={{
-              height: '50px',
-              width: '50px',
+          <Box
+            onClick={() => {
+              router.replace('/');
             }}
-          />
+          >
+            <img
+              src={AcmImage}
+              alt='acm logo'
+              style={{
+                height: '50px',
+                width: '50px',
+                cursor: 'pointer',
+              }}
+            />
+          </Box>
 
           <Typography
             variant='h4'
-            style={{ fontWeight: 'bold', marginLeft: '10px', color: 'white' }}
+            onClick={() => {
+              router.replace('/');
+            }}
+            style={{
+              fontWeight: 'bold',
+              marginLeft: '10px',
+              color: 'white',
+              cursor: 'pointer',
+            }}
           >
             YAH! 2k22
           </Typography>
           <div className={classes.grow} />
-          <Hidden implementation='css' xsDown>
-            <Button
-              onClick={() => {
-                window.scrollTo({
-                  left: 0,
-                  top: 0,
-                  behavior: 'smooth',
-                });
-              }}
-            >
-              <Typography
-                variant='h5'
-                style={{ fontWeight: 'bold', color: 'white' }}
-                color='inherit'
+          {location.pathname !== '/register' && (
+            <Hidden implementation='css' xsDown>
+              <Button
+                onClick={() => {
+                  window.scrollTo({
+                    left: 0,
+                    top: 0,
+                    behavior: 'smooth',
+                  });
+                }}
               >
-                About
-              </Typography>
-            </Button>
-            <Link to={`#domains`}>
-              <Button>
                 <Typography
                   variant='h5'
                   style={{ fontWeight: 'bold', color: 'white' }}
                   color='inherit'
                 >
-                  Domains
+                  About
                 </Typography>
               </Button>
-            </Link>
+              <Link to={`#domains`}>
+                <Button>
+                  <Typography
+                    variant='h5'
+                    style={{ fontWeight: 'bold', color: 'white' }}
+                    color='inherit'
+                  >
+                    Domains
+                  </Typography>
+                </Button>
+              </Link>
 
-            <Link to={`#format`}>
-              <Button>
-                <Typography
-                  variant='h5'
-                  style={{
-                    fontWeight: 'bold',
-                    color: 'white',
-                  }}
-                  color='inherit'
-                >
-                  Format
-                </Typography>
-              </Button>
-            </Link>
+              <Link to={`#format`}>
+                <Button>
+                  <Typography
+                    variant='h5'
+                    style={{
+                      fontWeight: 'bold',
+                      color: 'white',
+                    }}
+                    color='inherit'
+                  >
+                    Format
+                  </Typography>
+                </Button>
+              </Link>
 
-            <Link to={`#faq`}>
-              <Button>
-                <Typography
-                  variant='h5'
-                  style={{
-                    fontWeight: 'bold',
-                    color: 'white',
-                  }}
-                  color='inherit'
-                >
-                  FAQs
-                </Typography>
-              </Button>
-            </Link>
+              <Link to={`#faq`}>
+                <Button>
+                  <Typography
+                    variant='h5'
+                    style={{
+                      fontWeight: 'bold',
+                      color: 'white',
+                    }}
+                    color='inherit'
+                  >
+                    FAQs
+                  </Typography>
+                </Button>
+              </Link>
 
-            <Link to={`#sponsors`}>
-              <Button>
-                <Typography
-                  variant='h5'
-                  style={{ fontWeight: 'bold', color: 'white' }}
-                  color='inherit'
-                >
-                  Sponsors
-                </Typography>
-              </Button>
-            </Link>
-            <Link to={`#contact`}>
-              <Button>
-                <Typography
-                  variant='h5'
-                  style={{ fontWeight: 'bold', color: 'white' }}
-                  color='inherit'
-                >
-                  Contact
-                </Typography>
-              </Button>
-            </Link>
-          </Hidden>
+              <Link to={`#sponsors`}>
+                <Button>
+                  <Typography
+                    variant='h5'
+                    style={{ fontWeight: 'bold', color: 'white' }}
+                    color='inherit'
+                  >
+                    Sponsors
+                  </Typography>
+                </Button>
+              </Link>
+              <Link to={`#contact`}>
+                <Button>
+                  <Typography
+                    variant='h5'
+                    style={{ fontWeight: 'bold', color: 'white' }}
+                    color='inherit'
+                  >
+                    Contact
+                  </Typography>
+                </Button>
+              </Link>
+            </Hidden>
+          )}
         </Toolbar>
 
         <Box m={0.3} width={'100%'} />

@@ -1,8 +1,14 @@
 import React from 'react';
 import HomePage from '../Main-page/HomePage';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import './styles.scss';
 import CustomAppbar from './Appbar';
+// import RegisterPage from '../RegisterPage/RegisterPage';
 
 const NAVBAR = () => {
   return (
@@ -51,12 +57,16 @@ const NAVBAR = () => {
           src={hamLogo}
         />
       </nav> */}
-      <CustomAppbar />
 
+      <CustomAppbar />
       <Switch>
         <Route path='/' exact>
           <HomePage />
         </Route>
+        {/* <Route path='/register' exact>
+          <RegisterPage />
+        </Route> */}
+        <Redirect to='/' />
       </Switch>
     </Router>
   );

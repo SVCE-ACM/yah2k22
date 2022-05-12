@@ -53,6 +53,7 @@ function FrequentlyAsked(props) {
 export default function HomePage() {
   const theme = useTheme();
   const match = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <div className='Whole_div'>
       <div className='color_sectiom' id='home'>
