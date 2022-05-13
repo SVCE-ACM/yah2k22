@@ -67,7 +67,7 @@ export default function Footer() {
             </a>{' '}
           </p>
 
-          <p>Made by SVCE ACM Web Team</p>
+          <p>Made with ❤️ by SVCE ACM Web Team</p>
         </div>
       </div>
     </div>
