@@ -36,6 +36,7 @@ const RegisterView = () => {
       >
         <FormikStep label='Team Details'>
           <Card
+            elevation={4}
             sx={{
               borderRadius: '16px',
               backgroundColor: '#d7e9f7',
@@ -68,35 +69,19 @@ const RegisterView = () => {
                 <Field
                   name={`team_name`}
                   label={'Enter Team name'}
-                  //   type={
-                  //     item.name === 'age' || item.name === 'phoneNumber'
-                  //       ? 'number'
-                  //       : undefined
-                  //   }
-
                   as={CustomTextField}
-                  //   error={!!getIn(errors.section1, item.name)}
-                  //   helperText={getIn(errors.section1, item.name)}
                 />
               </Grid>
               <Grid item xs={12} sm={10}>
                 <Field
                   name={`count`}
                   label={'No. of team members'}
-                  //   type={
-                  //     item.name === 'age' || item.name === 'phoneNumber'
-                  //       ? 'number'
-                  //       : undefined
-                  //   }
                   items={[3, 4, 5]}
                   as={CustomDropDown}
-                  //   error={!!getIn(errors.section1, item.name)}
-                  //   helperText={getIn(errors.section1, item.name)}
                 />
               </Grid>
             </Grid>
             <Box m={4} />
-            {/* <CustomDropDown /> */}
           </Card>
         </FormikStep>
 
@@ -128,81 +113,58 @@ const RegisterView = () => {
                 sx={{
                   padding: '12px',
                   paddingTop: '12px',
-                  // marginLeft: '-12px',
                 }}
                 alignItems='center'
                 justifyContent={'center'}
               >
                 {console.log(index)}
-                <Typography>Enter Member {index + 1} Details</Typography>
+                <Typography>
+                  {index === 0
+                    ? 'Enter Team Leader Details'
+                    : `Enter Member ${index + 1} Details`}
+                </Typography>
                 <Grid item xs={12} sm={10}>
                   <Field
                     name={`player${index + 1}.name`}
-                    label={`Enter Member ${index + 1} name`}
-                    //   type={
-                    //     item.name === 'age' || item.name === 'phoneNumber'
-                    //       ? 'number'
-                    //       : undefined
-                    //   }
-
+                    label={
+                      index === 0
+                        ? 'Enter Team Leader name'
+                        : `Enter Member ${index + 1} name`
+                    }
                     as={CustomTextField}
-                    //   error={!!getIn(errors.section1, item.name)}
-                    //   helperText={getIn(errors.section1, item.name)}
                   />
                   <Field
                     name={`player${index + 1}.college`}
                     label={`College name`}
-                    //   type={
-                    //     item.name === 'age' || item.name === 'phoneNumber'
-                    //       ? 'number'
-                    //       : undefined
-                    //   }
-
                     as={CustomTextField}
-                    //   error={!!getIn(errors.section1, item.name)}
-                    //   helperText={getIn(errors.section1, item.name)}
                   />
                   <Field
                     name={`player${index + 1}.email`}
                     label={'Email Address'}
-                    //   type={
-                    //     item.name === 'age' || item.name === 'phoneNumber'
-                    //       ? 'number'
-                    //       : undefined
-                    //   }
                     as={CustomTextField}
-                    //   error={!!getIn(errors.section1, item.name)}
-                    //   helperText={getIn(errors.section1, item.name)}
                   />
                   <Field
                     name={`player${index + 1}.phone`}
                     label={'Phone Number'}
                     type={'number'}
                     as={CustomTextField}
-                    //   error={!!getIn(errors.section1, item.name)}
-                    //   helperText={getIn(errors.section1, item.name)}
                   />
                   <Field
                     name={`player${index + 1}.gender`}
                     label={'Gender'}
                     items={['Male', 'Female']}
                     as={CustomDropDown}
-                    //   error={!!getIn(errors.section1, item.name)}
-                    //   helperText={getIn(errors.section1, item.name)}
                   />
                   <Field
                     name={`player${index + 1}.github_url`}
                     label={'GitHub URL'}
                     as={CustomTextField}
-                    //   error={!!getIn(errors.section1, item.name)}
-                    //   helperText={getIn(errors.section1, item.name)}
                   />
                 </Grid>
               </Grid>
             ))}
 
             <Box m={4} />
-            {/* <CustomDropDown /> */}
           </Card>
         </FormikStep>
 
@@ -240,50 +202,26 @@ const RegisterView = () => {
                 <Field
                   name={`domain`}
                   label={'Select domain'}
-                  //   type={
-                  //     item.name === 'age' || item.name === 'phoneNumber'
-                  //       ? 'number'
-                  //       : undefined
-                  //   }
                   items={['one', 'two', 'three']}
                   as={CustomDropDown}
-                  //   error={!!getIn(errors.section1, item.name)}
-                  //   helperText={getIn(errors.section1, item.name)}
                 />
               </Grid>
               <Grid item xs={12} sm={10}>
                 <Field
                   name={`prob_st`}
                   label={'Enter Problem Statement'}
-                  //   type={
-                  //     item.name === 'age' || item.name === 'phoneNumber'
-                  //       ? 'number'
-                  //       : undefined
-                  //   }
-
                   as={CustomTextField}
-                  //   error={!!getIn(errors.section1, item.name)}
-                  //   helperText={getIn(errors.section1, item.name)}
                 />
               </Grid>
               <Grid item xs={12} sm={10}>
                 <Field
                   name={`abstract`}
                   label={'Enter your abstract'}
-                  //   type={
-                  //     item.name === 'age' || item.name === 'phoneNumber'
-                  //       ? 'number'
-                  //       : undefined
-                  //   }
-
                   as={CustomTextField}
-                  //   error={!!getIn(errors.section1, item.name)}
-                  //   helperText={getIn(errors.section1, item.name)}
                 />
               </Grid>
             </Grid>
             <Box m={4} />
-            {/* <CustomDropDown /> */}
           </Card>
         </FormikStep>
       </FormikStepper>
@@ -295,7 +233,7 @@ const CustomTextField = (props) => {
   return (
     <TextField
       variant='outlined'
-      required={true}
+      //   required={true}
       InputProps={{
         style: {
           borderRadius: '16px',
@@ -316,7 +254,7 @@ const CustomDropDown = (props) => {
     <>
       <TextField
         select
-        required={true}
+        // required={true}
         defaultValue=''
         {...props}
         variant='outlined'
