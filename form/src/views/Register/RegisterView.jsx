@@ -13,10 +13,12 @@ import {
 import { Step, StepLabel, Stepper } from '@mui/material';
 import { Form, Formik, Field } from 'formik';
 import { teamCountStore } from 'stores/teamCountStore';
+import { collection, addDoc } from 'firebase/firestore/lite';
+import { db } from 'db/firebaseapp';
 
 const RegisterView = () => {
   const count = teamCountStore((state) => state.count);
-  console.log(count);
+  // console.log(count);
   return (
     <div>
       <Typography
@@ -33,6 +35,8 @@ const RegisterView = () => {
         initialValues={{}}
         onSubmit={(values) => {
           console.log(values);
+          const groceriesColRef = collection(db, 'yah_entry');
+          return addDoc(groceriesColRef, values);
         }}
       >
         <FormikStep label='Team Details'>
