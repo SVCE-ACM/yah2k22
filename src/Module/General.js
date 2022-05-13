@@ -42,7 +42,7 @@ const Domain = [
   'MedTech / BioTech / HealthTech',
   'Fitness & Sports',
   'Smart Vehicles/ Smart Education',
-  'Finance and technology',
+  // 'Finance and technology',
 ];
 
 /** Instructions
@@ -94,8 +94,7 @@ const frequentlyAskedQuestions = [
     [
       {
         label: 'How do I register?',
-        content:
-          'Registration opens soon. Stay tuned!',
+        content: 'Registration opens soon. Stay tuned!',
       },
       {
         label: 'Is there Wi-Fi?',
