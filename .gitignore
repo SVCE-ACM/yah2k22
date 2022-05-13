@@ -6,6 +6,8 @@
 .pnp.js
 .cache/
 
+/venv/
+
 # testing
 /coverage
 
