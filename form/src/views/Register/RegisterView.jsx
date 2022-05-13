@@ -11,8 +11,11 @@ import {
 } from '@mui/material';
 import { Step, StepLabel, Stepper } from '@mui/material';
 import { Form, Formik, Field } from 'formik';
+import { teamCountStore } from 'stores/teamCountStore';
 
 const RegisterView = () => {
+  const count = teamCountStore((state) => state.count);
+  console.log(count);
   return (
     <div>
       <Typography
@@ -44,7 +47,7 @@ const RegisterView = () => {
             <Typography
               sx={{
                 margin: '20px 20px',
-                fontSize: '1.5 rem',
+                fontSize: '1.5rem',
                 fontWeight: 'bold',
               }}
             >
@@ -110,13 +113,119 @@ const RegisterView = () => {
             <Typography
               sx={{
                 margin: '20px 20px',
-                fontSize: '1.5 rem',
+                fontSize: '1.5rem',
                 fontWeight: 'bold',
               }}
             >
-              Enter Team member's Details
+              Enter Team Member's Details
             </Typography>
-            {/* <Grid
+            <Box m={2} />
+            {[...Array(count)].map((_, index) => (
+              <Grid
+                spacing={3}
+                key={index}
+                container
+                sx={{
+                  padding: '12px',
+                  paddingTop: '12px',
+                  // marginLeft: '-12px',
+                }}
+                alignItems='center'
+                justifyContent={'center'}
+              >
+                {console.log(index)}
+                <Typography>Enter Member {index + 1} Details</Typography>
+                <Grid item xs={12} sm={10}>
+                  <Field
+                    name={`player${index + 1}.name`}
+                    label={`Enter Member ${index + 1} name`}
+                    //   type={
+                    //     item.name === 'age' || item.name === 'phoneNumber'
+                    //       ? 'number'
+                    //       : undefined
+                    //   }
+
+                    as={CustomTextField}
+                    //   error={!!getIn(errors.section1, item.name)}
+                    //   helperText={getIn(errors.section1, item.name)}
+                  />
+                  <Field
+                    name={`player${index + 1}.college`}
+                    label={`College name`}
+                    //   type={
+                    //     item.name === 'age' || item.name === 'phoneNumber'
+                    //       ? 'number'
+                    //       : undefined
+                    //   }
+
+                    as={CustomTextField}
+                    //   error={!!getIn(errors.section1, item.name)}
+                    //   helperText={getIn(errors.section1, item.name)}
+                  />
+                  <Field
+                    name={`player${index + 1}.email`}
+                    label={'Email Address'}
+                    //   type={
+                    //     item.name === 'age' || item.name === 'phoneNumber'
+                    //       ? 'number'
+                    //       : undefined
+                    //   }
+                    as={CustomTextField}
+                    //   error={!!getIn(errors.section1, item.name)}
+                    //   helperText={getIn(errors.section1, item.name)}
+                  />
+                  <Field
+                    name={`player${index + 1}.phone`}
+                    label={'Phone Number'}
+                    type={'number'}
+                    as={CustomTextField}
+                    //   error={!!getIn(errors.section1, item.name)}
+                    //   helperText={getIn(errors.section1, item.name)}
+                  />
+                  <Field
+                    name={`player${index + 1}.gender`}
+                    label={'Gender'}
+                    items={['Male', 'Female']}
+                    as={CustomDropDown}
+                    //   error={!!getIn(errors.section1, item.name)}
+                    //   helperText={getIn(errors.section1, item.name)}
+                  />
+                  <Field
+                    name={`player${index + 1}.github_url`}
+                    label={'GitHub URL'}
+                    as={CustomTextField}
+                    //   error={!!getIn(errors.section1, item.name)}
+                    //   helperText={getIn(errors.section1, item.name)}
+                  />
+                </Grid>
+              </Grid>
+            ))}
+
+            <Box m={4} />
+            {/* <CustomDropDown /> */}
+          </Card>
+        </FormikStep>
+
+        <FormikStep label='Domain and abstract'>
+          <Card
+            sx={{
+              borderRadius: '16px',
+              backgroundColor: '#d7e9f7',
+              overflow: 'hidden',
+              margin: 'auto',
+              width: '50%', //90% in smaller devices.
+            }}
+          >
+            <Typography
+              sx={{
+                margin: '20px 20px',
+                fontSize: '1.5rem',
+                fontWeight: 'bold',
+              }}
+            >
+              Domain and abstract
+            </Typography>
+            <Grid
               spacing={3}
               container
               sx={{
@@ -129,8 +238,23 @@ const RegisterView = () => {
             >
               <Grid item xs={12} sm={10}>
                 <Field
-                  name={`team_name`}
-                  label={'Enter Team name'}
+                  name={`domain`}
+                  label={'Select domain'}
+                  //   type={
+                  //     item.name === 'age' || item.name === 'phoneNumber'
+                  //       ? 'number'
+                  //       : undefined
+                  //   }
+                  items={['one', 'two', 'three']}
+                  as={CustomDropDown}
+                  //   error={!!getIn(errors.section1, item.name)}
+                  //   helperText={getIn(errors.section1, item.name)}
+                />
+              </Grid>
+              <Grid item xs={12} sm={10}>
+                <Field
+                  name={`prob_st`}
+                  label={'Enter Problem Statement'}
                   //   type={
                   //     item.name === 'age' || item.name === 'phoneNumber'
                   //       ? 'number'
@@ -144,20 +268,20 @@ const RegisterView = () => {
               </Grid>
               <Grid item xs={12} sm={10}>
                 <Field
-                  name={`count`}
-                  label={'No. of team members'}
+                  name={`abstract`}
+                  label={'Enter your abstract'}
                   //   type={
                   //     item.name === 'age' || item.name === 'phoneNumber'
                   //       ? 'number'
                   //       : undefined
                   //   }
-                  items={[3, 4, 5]}
-                  as={CustomDropDown}
+
+                  as={CustomTextField}
                   //   error={!!getIn(errors.section1, item.name)}
                   //   helperText={getIn(errors.section1, item.name)}
                 />
               </Grid>
-            </Grid> */}
+            </Grid>
             <Box m={4} />
             {/* <CustomDropDown /> */}
           </Card>
@@ -171,6 +295,7 @@ const CustomTextField = (props) => {
   return (
     <TextField
       variant='outlined'
+      required={true}
       InputProps={{
         style: {
           borderRadius: '16px',
@@ -191,6 +316,7 @@ const CustomDropDown = (props) => {
     <>
       <TextField
         select
+        required={true}
         defaultValue=''
         {...props}
         variant='outlined'
@@ -202,7 +328,7 @@ const CustomDropDown = (props) => {
         sx={{
           borderRadius: '16px',
           //   marginTop: '20px',
-          //   marginBottom: '20px',
+          marginBottom: '20px',
           //   marginLeft: '20px',
           width: '100%',
         }}
@@ -223,6 +349,7 @@ function FormikStep({ children }) {
 
 function FormikStepper({ children, ...props }) {
   const childrenArray = React.Children.toArray(children);
+  const setCount = teamCountStore((state) => state.setCount);
   const [step, setStep] = useState(0);
   const currentChild = childrenArray[step];
   const [completed, setCompleted] = useState(false);
@@ -239,6 +366,12 @@ function FormikStepper({ children, ...props }) {
       validateOnMount={false}
       onSubmit={async (values, helpers) => {
         console.log(values);
+        if (step === 0) {
+          //   console.log('here');
+          if (values?.count) {
+            setCount(values?.count);
+          }
+        }
         if (isLastStep()) {
           await props.onSubmit(values, helpers);
           setStep(0);
