@@ -7,6 +7,7 @@ import {
   Typography,
   CircularProgress,
   Grid,
+  Divider,
   MenuItem,
 } from '@mui/material';
 import { Step, StepLabel, Stepper } from '@mui/material';
@@ -42,18 +43,24 @@ const RegisterView = () => {
               backgroundColor: '#d7e9f7',
               overflow: 'hidden',
               margin: 'auto',
-              width: '50%', //90% in smaller devices.
+              width: '90%', //90% in smaller devices.
             }}
           >
             <Typography
               sx={{
-                margin: '20px 20px',
+                padding: '10px 20px',
                 fontSize: '1.5rem',
+                width: '100%',
+                backgroundColor: '#222944',
                 fontWeight: 'bold',
+                color: 'white',
               }}
             >
               Enter Team Details
             </Typography>
+
+            <Divider sx={{ marginBottom: '20px' }} />
+
             <Grid
               spacing={3}
               container
@@ -81,87 +88,109 @@ const RegisterView = () => {
                 />
               </Grid>
             </Grid>
-            <Box m={4} />
+            <Box m={2} />
           </Card>
         </FormikStep>
 
         <FormikStep label='Team Members Details'>
           <Card
+            elevation={5}
             sx={{
               borderRadius: '16px',
-              backgroundColor: '#d7e9f7',
+              backgroundColor: '#222944',
               overflow: 'hidden',
               margin: 'auto',
-              width: '50%', //90% in smaller devices.
+              width: '60%', //90% in smaller devices.
             }}
           >
             <Typography
               sx={{
-                margin: '20px 20px',
+                padding: '10px 20px',
                 fontSize: '1.5rem',
+                width: '100%',
+                backgroundColor: '#222944',
                 fontWeight: 'bold',
+                color: 'white',
               }}
             >
               Enter Team Member's Details
             </Typography>
+
+            <Divider sx={{ marginBottom: '20px' }} />
+
             <Box m={2} />
             {[...Array(count)].map((_, index) => (
-              <Grid
-                spacing={3}
-                key={index}
-                container
+              <Card
+                elevation={4}
                 sx={{
-                  padding: '12px',
-                  paddingTop: '12px',
+                  borderRadius: '16px',
+                  backgroundColor: '#d7e9f7',
+                  //   overflow: 'hidden',
+                  margin: 'auto',
+                  marginTop: '30px',
+                  width: '80%', //90% in smaller devices.
                 }}
-                alignItems='center'
-                justifyContent={'center'}
               >
-                {console.log(index)}
-                <Typography>
-                  {index === 0
-                    ? 'Enter Team Leader Details'
-                    : `Enter Member ${index + 1} Details`}
-                </Typography>
-                <Grid item xs={12} sm={10}>
-                  <Field
-                    name={`player${index + 1}.name`}
-                    label={
-                      index === 0
-                        ? 'Enter Team Leader name'
-                        : `Enter Member ${index + 1} name`
-                    }
-                    as={CustomTextField}
-                  />
-                  <Field
-                    name={`player${index + 1}.college`}
-                    label={`College name`}
-                    as={CustomTextField}
-                  />
-                  <Field
-                    name={`player${index + 1}.email`}
-                    label={'Email Address'}
-                    as={CustomTextField}
-                  />
-                  <Field
-                    name={`player${index + 1}.phone`}
-                    label={'Phone Number'}
-                    type={'number'}
-                    as={CustomTextField}
-                  />
-                  <Field
-                    name={`player${index + 1}.gender`}
-                    label={'Gender'}
-                    items={['Male', 'Female']}
-                    as={CustomDropDown}
-                  />
-                  <Field
-                    name={`player${index + 1}.github_url`}
-                    label={'GitHub URL'}
-                    as={CustomTextField}
-                  />
+                <Grid
+                  spacing={3}
+                  key={index}
+                  container
+                  sx={{
+                    // padding: '32px',
+                    paddingTop: '42px',
+                  }}
+                  alignItems='center'
+                  justifyContent={'center'}
+                >
+                  <Typography
+                    variant='h6'
+                    sx={{ fontWeight: 'bold', marginBottom: '10px' }}
+                  >
+                    {index === 0
+                      ? 'Enter Team Leader Details'
+                      : `Enter Member ${index + 1} Details`}
+                  </Typography>
+                  <Divider sx={{ width: '100%' }} />
+                  <Grid item xs={12} sm={10}>
+                    <Field
+                      name={`player${index + 1}.name`}
+                      label={
+                        index === 0
+                          ? 'Enter Team Leader name'
+                          : `Enter Member ${index + 1} name`
+                      }
+                      as={CustomTextField}
+                    />
+                    <Field
+                      name={`player${index + 1}.college`}
+                      label={`College name`}
+                      as={CustomTextField}
+                    />
+                    <Field
+                      name={`player${index + 1}.email`}
+                      label={'Email Address'}
+                      as={CustomTextField}
+                    />
+                    <Field
+                      name={`player${index + 1}.phone`}
+                      label={'Phone Number'}
+                      type={'number'}
+                      as={CustomTextField}
+                    />
+                    <Field
+                      name={`player${index + 1}.gender`}
+                      label={'Gender'}
+                      items={['Male', 'Female']}
+                      as={CustomDropDown}
+                    />
+                    <Field
+                      name={`player${index + 1}.github_url`}
+                      label={'GitHub URL'}
+                      as={CustomTextField}
+                    />
+                  </Grid>
                 </Grid>
-              </Grid>
+              </Card>
             ))}
 
             <Box m={4} />
@@ -175,18 +204,24 @@ const RegisterView = () => {
               backgroundColor: '#d7e9f7',
               overflow: 'hidden',
               margin: 'auto',
-              width: '50%', //90% in smaller devices.
+              width: '60%', //90% in smaller devices.
             }}
           >
             <Typography
               sx={{
-                margin: '20px 20px',
+                padding: '10px 20px',
                 fontSize: '1.5rem',
+                width: '100%',
+                backgroundColor: '#222944',
                 fontWeight: 'bold',
+                color: 'white',
               }}
             >
               Domain and abstract
             </Typography>
+
+            <Divider sx={{ marginBottom: '20px' }} />
+
             <Grid
               spacing={3}
               container
