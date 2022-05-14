@@ -6,25 +6,26 @@ const Format = () => {
       style={{
         textAlign: 'left',
         padding: '1rem',
+        paddingTop: '0px',
         lineHeight: 1.6,
       }}
     >
       <h2>1. Online Screening Round</h2>
       <p>
-        There's no special work needed for this round. Just fill in the
-        registration form once the registrations open. For the abstract, pick a
-        domain of your choice and submit an idea. Note that you don't need to
-        implement the same idea at the hackathon. We will simply use this to
-        judge your problem solving skills and creativity. Your Github links (Or
-        GitLab, BitBucket or even HackerRank) will sell us on your coding
-        proficiency. If you don't have one of those, link us to something else
-        that you've made. Maybe an app or a website.
+        The first step is to fill the registration form with your abstract. For
+        the abstract, pick an impactful problem statement from the domain of
+        your choice. Please note that the abstract that you submit will be
+        highly instrumental in determining your selection for the next round.
+        Your Github links (Or GitLab, BitBucket or even LeetCode) will sell us
+        on your coding proficiency. If you don't have one of those, link us to
+        something else that you've made, maybe an app or a website.
       </p>
       <h2>2. The 24-Hour Hackathon</h2>
       <p>
-        This is an on-site hackathon. We'll give you all the required
-        information regarding this if you do get selected for the round. But
-        check out our FAQ which should cover most of your questions.
+        This is an on-campus hackathon conducted at Sri Venkateswara college of
+        Engineering. We'll give you all the required information regarding this
+        if you do get selected for the round. But check out our FAQ which should
+        cover most of your questions.
       </p>
     </div>
   );
