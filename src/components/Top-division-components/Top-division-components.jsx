@@ -38,13 +38,15 @@ function Myinfo() {
         h
       </div> */}
 
-      <p
+      <h2
         style={{
           marginTop: '3rem',
+          // fontSize: '1.5rem',
+          fontWeight: 'bold',
         }}
       >
-        Registrations opening soon.
-      </p>
+        Registrations opening on 17th of May
+      </h2>
 
       {/* <a href={TOP_SECTION.HACKERS_REGISTRATION_FORM_LINK} style={{}}>
         <Btn
