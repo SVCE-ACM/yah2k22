@@ -7,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { CircularProgress } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const CustomDialog = ({
   dialogOpen,
@@ -14,6 +15,8 @@ const CustomDialog = ({
   isSubmitting,
   submitForm,
 }) => {
+  let navigate = useNavigate();
+
   return (
     <Dialog
       open={dialogOpen}
@@ -48,7 +51,8 @@ const CustomDialog = ({
           disabled={isSubmitting}
           onClick={async () => {
             await submitForm();
-            handleClose();
+            // handleClose();
+            navigate('/done', { replace: true });
           }}
         >
           OK
