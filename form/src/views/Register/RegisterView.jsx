@@ -5,7 +5,6 @@ import {
   Button,
   Box,
   Typography,
-  CircularProgress,
   Grid,
   Divider,
   MenuItem,
@@ -15,10 +14,13 @@ import { Form, Formik, Field } from 'formik';
 import { teamCountStore } from 'stores/teamCountStore';
 import { collection, addDoc } from 'firebase/firestore/lite';
 import { db } from 'db/firebaseapp';
+import CustomDialog from 'common/CustomDialog';
+import CustomSnackbar from 'common/CustomSnackbar';
+import { snackBarStore } from 'stores/snackbarStore';
 
 const RegisterView = () => {
   const count = teamCountStore((state) => state.count);
-  // console.log(count);
+  const snackbar = snackBarStore((state) => state);
   return (
     <div>
       <Typography
@@ -33,10 +35,19 @@ const RegisterView = () => {
       </Typography>
       <FormikStepper
         initialValues={{}}
-        onSubmit={(values) => {
-          console.log(values);
-          const groceriesColRef = collection(db, 'yah_entry');
-          return addDoc(groceriesColRef, values);
+        onSubmit={async (values) => {
+          try {
+            //REACT_APP_SOURCE is the password to read and write data in firestore db.
+            values['source'] = process.env.REACT_APP_SOURCE;
+            const yahEntryColumnRef = collection(db, 'yah_entry');
+            await addDoc(yahEntryColumnRef, values);
+          } catch (error) {
+            snackbar.setmessage(
+              'There is some error in adding your information. Please contact us immediately.'
+            );
+            snackbar.setIsError(true);
+            snackbar.setOpen(true);
+          }
         }}
       >
         <FormikStep label='Team Details'>
@@ -47,7 +58,7 @@ const RegisterView = () => {
               backgroundColor: '#d7e9f7',
               overflow: 'hidden',
               margin: 'auto',
-              width: '90%', //90% in smaller devices.
+              width: '60%', //90% in smaller devices.
             }}
           >
             <Typography
@@ -120,7 +131,12 @@ const RegisterView = () => {
               Enter Team Member's Details
             </Typography>
 
-            <Divider sx={{ marginBottom: '20px' }} />
+            <Divider
+              sx={{
+                marginBottom: '20px',
+                // width: '100%',
+              }}
+            />
 
             <Box m={2} />
             {[...Array(count)].map((_, index) => (
@@ -132,6 +148,7 @@ const RegisterView = () => {
                   //   overflow: 'hidden',
                   margin: 'auto',
                   marginTop: '30px',
+                  paddingBottom: '20px',
                   width: '80%', //90% in smaller devices.
                 }}
               >
@@ -256,6 +273,8 @@ const RegisterView = () => {
                 <Field
                   name={`abstract`}
                   label={'Enter your abstract'}
+                  multiline={true}
+                  rows={20}
                   as={CustomTextField}
                 />
               </Grid>
@@ -264,6 +283,12 @@ const RegisterView = () => {
           </Card>
         </FormikStep>
       </FormikStepper>
+      <CustomSnackbar
+        open={snackbar.open}
+        handleClose={() => snackbar.setOpen(false)}
+        message={snackbar.message ?? 'Server error'}
+        severity='error'
+      />
     </div>
   );
 };
@@ -272,7 +297,7 @@ const CustomTextField = (props) => {
   return (
     <TextField
       variant='outlined'
-      //   required={true}
+      required={true}
       InputProps={{
         style: {
           borderRadius: '16px',
@@ -293,7 +318,7 @@ const CustomDropDown = (props) => {
     <>
       <TextField
         select
-        // required={true}
+        required={true}
         defaultValue=''
         {...props}
         variant='outlined'
@@ -326,6 +351,7 @@ function FormikStep({ children }) {
 
 function FormikStepper({ children, ...props }) {
   const childrenArray = React.Children.toArray(children);
+  const [openDialog, setOpenDialog] = useState(false);
   const setCount = teamCountStore((state) => state.setCount);
   const [step, setStep] = useState(0);
   const currentChild = childrenArray[step];
@@ -359,7 +385,7 @@ function FormikStepper({ children, ...props }) {
         }
       }}
     >
-      {({ isSubmitting }) => (
+      {({ isSubmitting, submitForm }) => (
         <Form>
           <Stepper alternativeLabel activeStep={step} sx={{ marginBottom: 3 }}>
             {childrenArray.map((child, index) => (
@@ -385,22 +411,36 @@ function FormikStepper({ children, ...props }) {
           >
             {step > 0 ? (
               <Button
+                variant='outlined'
+                sx={{ borderRadius: '12px' }}
                 disabled={isSubmitting}
                 onClick={() => setStep((s) => s - 1)}
               >
                 Back
               </Button>
             ) : null}
-            <Button disabled={isSubmitting} type='submit'>
-              {isSubmitting ? (
-                <CircularProgress />
-              ) : isLastStep() ? (
-                'Submit'
-              ) : (
-                'Next'
-              )}
+            <Button
+              variant='outlined'
+              sx={{ borderRadius: '12px' }}
+              disabled={isSubmitting}
+              type={!isLastStep() ? 'submit' : undefined}
+              onClick={() => {
+                if (isLastStep()) {
+                  setOpenDialog(true);
+                }
+              }}
+            >
+              {isLastStep() ? 'Submit' : 'Next'}
             </Button>
           </Box>
+          <CustomDialog
+            dialogOpen={openDialog}
+            handleClose={() => {
+              setOpenDialog(false);
+            }}
+            isSubmitting={isSubmitting}
+            submitForm={submitForm}
+          />
         </Form>
       )}
     </Formik>
