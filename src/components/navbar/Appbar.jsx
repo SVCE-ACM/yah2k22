@@ -42,6 +42,7 @@ function ElevationScroll(props) {
 
 const CustomAppbar = () => {
   const [scrollPos, setScrollPos] = useState(0);
+  console.log(scrollPos);
   const classes = useStyles();
   const location = useLocation();
   const router = useHistory();
@@ -66,7 +67,9 @@ const CustomAppbar = () => {
       <AppBar
         position='sticky'
         style={{
-          backgroundColor: '#222944',
+          transition:
+            'background-color 350ms cubic-bezier(0.65, 0.05, 0.36, 1) 0s',
+          backgroundColor: scrollPos > 19 ? '#ffffff' : '#222944',
         }}
       >
         <LinearProgress
@@ -74,9 +77,11 @@ const CustomAppbar = () => {
             width: '100%',
             height: '6px',
             position: 'sticky',
-            backgroundColor: '#222944',
+            transition:
+              'background-color 350ms cubic-bezier(0.65, 0.05, 0.36, 1) 0s',
+            backgroundColor: scrollPos > 19 ? '#ffffff' : '#222944',
           }}
-          color={'secondary'}
+          color={scrollPos > 19 ? 'primary' : 'secondary'}
           variant='determinate'
           value={scrollPos}
         />
@@ -112,7 +117,9 @@ const CustomAppbar = () => {
             style={{
               fontWeight: 'bold',
               marginLeft: '10px',
-              color: 'white',
+              transition:
+                'background-color 350ms cubic-bezier(0.65, 0.05, 0.36, 1) 0s',
+              color: scrollPos > 19 ? 'black' : 'white',
               cursor: 'pointer',
             }}
           >
@@ -132,7 +139,12 @@ const CustomAppbar = () => {
               >
                 <Typography
                   variant='h5'
-                  style={{ fontWeight: 'bold', color: 'white' }}
+                  style={{
+                    fontWeight: 'bold',
+                    transition:
+                      'background-color 350ms cubic-bezier(0.65, 0.05, 0.36, 1) 0s',
+                    color: scrollPos > 19 ? 'black' : 'white',
+                  }}
                   color='inherit'
                 >
                   About
@@ -142,7 +154,12 @@ const CustomAppbar = () => {
                 <Button>
                   <Typography
                     variant='h5'
-                    style={{ fontWeight: 'bold', color: 'white' }}
+                    style={{
+                      fontWeight: 'bold',
+                      transition:
+                        'background-color 350ms cubic-bezier(0.65, 0.05, 0.36, 1) 0s',
+                      color: scrollPos > 19 ? 'black' : 'white',
+                    }}
                     color='inherit'
                   >
                     Domains
@@ -156,7 +173,9 @@ const CustomAppbar = () => {
                     variant='h5'
                     style={{
                       fontWeight: 'bold',
-                      color: 'white',
+                      transition:
+                        'background-color 350ms cubic-bezier(0.65, 0.05, 0.36, 1) 0s',
+                      color: scrollPos > 19 ? 'black' : 'white',
                     }}
                     color='inherit'
                   >
@@ -171,7 +190,9 @@ const CustomAppbar = () => {
                     variant='h5'
                     style={{
                       fontWeight: 'bold',
-                      color: 'white',
+                      transition:
+                        'background-color 350ms cubic-bezier(0.65, 0.05, 0.36, 1) 0s',
+                      color: scrollPos > 19 ? 'black' : 'white',
                     }}
                     color='inherit'
                   >
@@ -184,7 +205,12 @@ const CustomAppbar = () => {
                 <Button>
                   <Typography
                     variant='h5'
-                    style={{ fontWeight: 'bold', color: 'white' }}
+                    style={{
+                      fontWeight: 'bold',
+                      transition:
+                        'background-color 350ms cubic-bezier(0.65, 0.05, 0.36, 1) 0s',
+                      color: scrollPos > 19 ? 'black' : 'white',
+                    }}
                     color='inherit'
                   >
                     Sponsors
@@ -195,7 +221,12 @@ const CustomAppbar = () => {
                 <Button>
                   <Typography
                     variant='h5'
-                    style={{ fontWeight: 'bold', color: 'white' }}
+                    style={{
+                      fontWeight: 'bold',
+                      transition:
+                        'background-color 350ms cubic-bezier(0.65, 0.05, 0.36, 1) 0s',
+                      color: scrollPos > 19 ? 'black' : 'white',
+                    }}
                     color='inherit'
                   >
                     Contact
