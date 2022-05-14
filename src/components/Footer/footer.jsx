@@ -4,6 +4,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import EmailIcon from '@material-ui/icons/Email';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 import { SOCIALS } from '../../Module/General';
 
@@ -27,6 +28,17 @@ export default function Footer() {
           <div className='social-icon'>
             <a rel='noreferrer' target='_blank' href={SOCIALS.facebook}>
               <FacebookIcon
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  color: 'black',
+                }}
+              />
+            </a>
+          </div>
+          <div className='social-icon'>
+            <a rel='noreferrer' target='_blank' href={SOCIALS.linkedIn}>
+              <LinkedInIcon
                 style={{
                   width: '50px',
                   height: '50px',
