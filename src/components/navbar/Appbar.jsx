@@ -42,7 +42,6 @@ function ElevationScroll(props) {
 
 const CustomAppbar = () => {
   const [scrollPos, setScrollPos] = useState(0);
-  console.log(scrollPos);
   const classes = useStyles();
   const location = useLocation();
   const router = useHistory();
