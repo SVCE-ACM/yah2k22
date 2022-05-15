@@ -72,6 +72,7 @@ const CustomAppbar = () => {
             onClick={() => {
               //   router.replace('/');
               // take to Yah home page
+              window.open('https://yah2k22.netlify.app', '_self');
             }}
           >
             <img
@@ -90,6 +91,7 @@ const CustomAppbar = () => {
             onClick={() => {
               //   router.replace('/');
               // take to Yah home page
+              window.open('https://yah2k22.netlify.app', '_self');
             }}
             sx={{
               fontWeight: 'bold',
