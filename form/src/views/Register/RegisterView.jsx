@@ -8,11 +8,20 @@ import {
   Grid,
   Divider,
   MenuItem,
+  useTheme,
+  useMediaQuery,
+  CircularProgress,
 } from '@mui/material';
 import { Step, StepLabel, Stepper } from '@mui/material';
 import { Form, Formik, Field } from 'formik';
 import { teamCountStore } from 'stores/teamCountStore';
-import { collection, addDoc } from 'firebase/firestore/lite';
+import {
+  collection,
+  addDoc,
+  query,
+  where,
+  getDocs,
+} from 'firebase/firestore/lite';
 import { db } from 'db/firebaseapp';
 import CustomDialog from 'common/CustomDialog';
 import CustomSnackbar from 'common/CustomSnackbar';
@@ -21,6 +30,10 @@ import { snackBarStore } from 'stores/snackbarStore';
 const RegisterView = () => {
   const count = teamCountStore((state) => state.count);
   const snackbar = snackBarStore((state) => state);
+
+  const theme = useTheme();
+  const match = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <div>
       <Typography
@@ -54,18 +67,20 @@ const RegisterView = () => {
           <Card
             elevation={4}
             sx={{
+              marginTop: '20px',
               borderRadius: '16px',
               backgroundColor: '#d7e9f7',
               overflow: 'hidden',
               margin: 'auto',
-              width: '60%', //90% in smaller devices.
+              width: match ? '90%' : '60%', //90% in smaller devices.
             }}
           >
             <Typography
               sx={{
-                padding: '10px 20px',
+                padding: '10px 0px',
                 fontSize: '1.5rem',
                 width: '100%',
+                textAlign: 'center',
                 backgroundColor: '#222944',
                 fontWeight: 'bold',
                 color: 'white',
@@ -115,14 +130,15 @@ const RegisterView = () => {
               backgroundColor: '#222944',
               overflow: 'hidden',
               margin: 'auto',
-              width: '60%', //90% in smaller devices.
+              width: match ? '90%' : '60%', //90% in smaller devices.
             }}
           >
             <Typography
               sx={{
-                padding: '10px 20px',
+                padding: '10px 0px',
                 fontSize: '1.5rem',
                 width: '100%',
+                textAlign: 'center',
                 backgroundColor: '#222944',
                 fontWeight: 'bold',
                 color: 'white',
@@ -131,12 +147,12 @@ const RegisterView = () => {
               Enter Team Member's Details
             </Typography>
 
-            <Divider
+            {/* <Divider
               sx={{
-                marginBottom: '20px',
+                marginBottom: '10px',
                 // width: '100%',
               }}
-            />
+            /> */}
 
             <Box m={2} />
             {[...Array(count)].map((_, index) => (
@@ -149,7 +165,8 @@ const RegisterView = () => {
                   margin: 'auto',
                   marginTop: '30px',
                   paddingBottom: '20px',
-                  width: '80%', //90% in smaller devices.
+
+                  width: match ? '90%' : '80%', //90% in smaller devices.
                 }}
               >
                 <Grid
@@ -159,6 +176,8 @@ const RegisterView = () => {
                   sx={{
                     // padding: '32px',
                     paddingTop: '42px',
+                    paddingLeft: match ? '20px' : undefined,
+                    paddingRight: match ? '20px' : undefined,
                   }}
                   alignItems='center'
                   justifyContent={'center'}
@@ -225,13 +244,14 @@ const RegisterView = () => {
               backgroundColor: '#d7e9f7',
               overflow: 'hidden',
               margin: 'auto',
-              width: '60%', //90% in smaller devices.
+              width: match ? '90%' : '60%', //90% in smaller devices.
             }}
           >
             <Typography
               sx={{
-                padding: '10px 20px',
+                padding: '10px 0px',
                 fontSize: '1.5rem',
+                textAlign: 'center',
                 width: '100%',
                 backgroundColor: '#222944',
                 fontWeight: 'bold',
@@ -274,7 +294,7 @@ const RegisterView = () => {
                   name={`abstract`}
                   label={'Enter your abstract'}
                   multiline={true}
-                  rows={20}
+                  rows={match ? 15 : 20}
                   as={CustomTextField}
                 />
               </Grid>
@@ -356,6 +376,7 @@ function FormikStepper({ children, ...props }) {
   const [step, setStep] = useState(0);
   const currentChild = childrenArray[step];
   const [completed, setCompleted] = useState(false);
+  const snackbar = snackBarStore((state) => state);
 
   function isLastStep() {
     return step === childrenArray.length - 1;
@@ -368,12 +389,35 @@ function FormikStepper({ children, ...props }) {
       validateOnBlur={false}
       validateOnMount={false}
       onSubmit={async (values, helpers) => {
-        console.log(values);
         if (step === 0) {
-          //   console.log('here');
+          try {
+            const yahEntry = collection(db, 'yah_entry');
+
+            const q = query(
+              yahEntry,
+              where('team_name', '==', `${values.team_name}`)
+            );
+            const querySnapshot = await getDocs(q);
+            if (querySnapshot.docs.length === 1) {
+              snackbar.setmessage(
+                'This team name is taken by some other team. Come up with another name.'
+              );
+              snackbar.setIsError(true);
+              snackbar.setOpen(true);
+              return;
+            }
+          } catch (error) {
+            snackbar.setmessage(
+              'There is some error in adding your information. Please contact us immediately.'
+            );
+            snackbar.setIsError(true);
+            snackbar.setOpen(true);
+          }
+
           if (values?.count) {
             setCount(values?.count);
           }
+          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         }
         if (isLastStep()) {
           await props.onSubmit(values, helpers);
@@ -382,12 +426,13 @@ function FormikStepper({ children, ...props }) {
         } else {
           setStep((s) => s + 1);
           helpers.setTouched({});
+          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         }
       }}
     >
       {({ isSubmitting, submitForm }) => (
         <Form>
-          <Stepper alternativeLabel activeStep={step} sx={{ marginBottom: 3 }}>
+          <Stepper alternativeLabel activeStep={step} sx={{ marginBottom: 4 }}>
             {childrenArray.map((child, index) => (
               <Step
                 key={child.props.label}
@@ -414,7 +459,10 @@ function FormikStepper({ children, ...props }) {
                 variant='outlined'
                 sx={{ borderRadius: '12px' }}
                 disabled={isSubmitting}
-                onClick={() => setStep((s) => s - 1)}
+                onClick={() => {
+                  setStep((s) => s - 1);
+                  // window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                }}
               >
                 Back
               </Button>
@@ -430,7 +478,13 @@ function FormikStepper({ children, ...props }) {
                 }
               }}
             >
-              {isLastStep() ? 'Submit' : 'Next'}
+              {!isLastStep() && isSubmitting ? (
+                <CircularProgress />
+              ) : isLastStep() ? (
+                'Submit'
+              ) : (
+                'Next'
+              )}
             </Button>
           </Box>
           <CustomDialog
@@ -440,6 +494,12 @@ function FormikStepper({ children, ...props }) {
             }}
             isSubmitting={isSubmitting}
             submitForm={submitForm}
+          />
+          <CustomSnackbar
+            open={snackbar.open}
+            handleClose={() => snackbar.setOpen(false)}
+            message={snackbar.message ?? 'Server error'}
+            severity='error'
           />
         </Form>
       )}
