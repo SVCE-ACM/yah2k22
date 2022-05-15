@@ -215,6 +215,8 @@ const RegisterView = () => {
                       name={`player${index + 1}.phone`}
                       label={'Phone Number'}
                       type={'number'}
+                      // to hide the stepper in the right and remove its functionality as it is not needed
+                      step='0.01'
                       as={CustomTextField}
                     />
                     <Field
@@ -278,7 +280,15 @@ const RegisterView = () => {
                 <Field
                   name={`domain`}
                   label={'Select domain'}
-                  items={['one', 'two', 'three']}
+                  items={[
+                    'Agriculture, FoodTech & Rural Development',
+                    'Clean & Green Technology',
+                    'Blockchain & Cybersecurity',
+                    'MedTech / BioTech / HealthTech',
+                    'Fitness & Sports',
+                    'Smart Vehicles/ Smart Education',
+                    // 'Finance and technology',
+                  ]}
                   as={CustomDropDown}
                 />
               </Grid>
