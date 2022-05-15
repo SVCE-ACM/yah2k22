@@ -11,6 +11,11 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid #F5F5F5',
     borderRadius: '16px',
     transition: 'box-shadow .2s ease,border .2s ease',
+    // background:'hsla(177, 87%, 79%, 1)',
+    color: 'white',
+    background:
+      'radial-gradient( circle 470px at 49.5% 48.5%,  rgba(3,76,153,1) 0%, rgba(0,0,0,1) 95.1% )',
+
     '&:hover': {
       boxShadow: 'rgb(0 0 0 / 8%) 0px 25px 25px',
     },
