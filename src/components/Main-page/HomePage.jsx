@@ -10,6 +10,7 @@ import Format from '../format/Format.jsx';
 import { Heading } from '../heading/heading.jsx';
 import { Accordion } from '../FAQ/faq.jsx';
 import { Sponsor, SponsorsHead, SponsorUS } from '../Sponsors/sponsors.jsx';
+import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 
 import { Box, useTheme, useMediaQuery } from '@material-ui/core';
 
@@ -52,7 +53,7 @@ function FrequentlyAsked(props) {
 
 export default function HomePage() {
   const theme = useTheme();
-  const match = useMediaQuery(theme.breakpoints.down('md'));
+  const match = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <div className='Whole_div'>
@@ -145,6 +146,60 @@ export default function HomePage() {
             Contact
           </h3>
           <h3>Still got questions? Get in touch with us</h3>
+          <a href='tel:+919176550708'>
+            <h3>
+              <PhoneIphoneIcon
+                style={{
+                  width: '20px',
+                  height: '18px',
+                }}
+              />{' '}
+              Nikhilesh S: 9176550708
+            </h3>
+          </a>
+          <a href='tel:+917904438056'>
+            <h3>
+              <PhoneIphoneIcon
+                style={{
+                  width: '20px',
+                  height: '18px',
+                }}
+              />{' '}
+              Sandhya V: 7904438056
+            </h3>
+          </a>
+          <a href='tel:+919360424277'>
+            <h3>
+              <PhoneIphoneIcon
+                style={{
+                  width: '20px',
+                  height: '18px',
+                }}
+              />{' '}
+              Benita Majo: 9360424277
+            </h3>
+          </a>
+        </Row>
+        <Row id='venue'>
+          <h3
+            style={{
+              fontWeight: 'bold',
+              fontSize: '3.5rem',
+              marginBottom: '10px',
+            }}
+          >
+            Venue
+          </h3>
+          <iframe
+            title='Venue'
+            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15840.307801423798!2d79.96493564991258!3d12.992301798522979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a528d5e121cc659%3A0x4a606486fdc3c3d8!2sSri%20Venkateswara%20College%20of%20Engineering%20(Autonomous)!5e0!3m2!1sen!2sin!4v1652586320047!5m2!1sen!2sin'
+            width={match ? '400' : '800'}
+            height={match ? '300' : '500'}
+            style={{ border: 0 }}
+            allowfullscreen=''
+            loading='lazy'
+            referrerpolicy='no-referrer-when-downgrade'
+          ></iframe>
         </Row>
       </Container>
       <Footer />
