@@ -73,7 +73,7 @@ const frequentlyAskedQuestions = [
       {
         label: 'How much does it cost?',
         content:
-          "Rs. 450 per person. We'll take care of all your meals & refreshments! You'll pay this only if you're selected for the on-campus round. Online round is free of cost!",
+          "Rs. 499 per person. We'll take care of all your meals & refreshments! You'll pay this only if you're selected for the on-campus round. Online round is free of cost!",
       },
       {
         label: 'What do we need to bring?',
@@ -134,7 +134,7 @@ const frequentlyAskedQuestions = [
       {
         label: 'What about food?',
         content:
-          "Our judges will be evaluating teams on the 3 I's - Innovation (Originality & Creativity of the idea), Implementation (Technical challenge & completeness of the project), and Impact (Business or Social Impact.)",
+          "We'll be providing you with lunch & dinner on day 1 and breakfast & lunch on day 2. We'll also have a stash of snacks and refreshments available for everyone round the clock.",
       },
     ],
   ],
