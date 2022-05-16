@@ -22,7 +22,7 @@ import {
   TOP_SECTION,
 } from '../../Module/General';
 
-import AcmSvce from '../../Module/Assets/acm/svce-acm.jpeg';
+import AcmSvce from '../../Module/Assets/acm/image.jpg';
 import AcmWSvce from '../../Module/Assets/acm/acm-w.jpeg';
 
 import { TopSection2 } from '../top-section-2/TopSection2.jsx';
@@ -95,8 +95,9 @@ export default function HomePage() {
               <img
                 src={AcmSvce}
                 style={{
-                  width: match ? '335px' : '435px',
-                  height: '140px',
+                  width: match ? '335px' : '505px',
+                  // height: '140px',
+                  paddingTop: match ? '0px' : '100px',
                   // paddingLeft: match ? '30px' : '0px',
                   // paddingRight: match ? '30px' : '0px',
                 }}

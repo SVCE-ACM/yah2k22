@@ -119,7 +119,7 @@ const frequentlyAskedQuestions = [
       {
         label: 'What do I get out of this hackathon?',
         content:
-          'You get a great opportunity for peer networking, compete to win massive cash prizes, chances to gain internships or job offers from some cool companies, an amazing learning experience, punny jokes and some awesome memories. ;)',
+          'You get a great opportunity for peer networking, compete to win 70k worth of cash prizes, chances to gain internships or job offers from Casa Retail AI and Mad Street Den, an amazing learning experience, punny jokes and some awesome memories. ;)',
       },
       {
         label: 'When and where is the hackathon being conducted?',
