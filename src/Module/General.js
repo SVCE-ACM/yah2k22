@@ -2,6 +2,10 @@
 
 import YahLogo from './Assets/acm/yahlogo.png';
 
+import CasaRetail from './Assets/sponsers/casa_retail.jpeg';
+import MadStreetDen from './Assets/sponsers/mad_street_den.jpeg';
+import Flip from './Assets/sponsers/flip.jpeg'
+
 /** Put all your sponsors logo inside folder `sponsorLogos`
  * and import them in the above and update `src` in sponsorLogos
  * or you can provide a cloud link in src
@@ -9,9 +13,14 @@ import YahLogo from './Assets/acm/yahlogo.png';
 
 const TOP_SECTION = {
   TITLE: 'Yet Another Hackathon! 2k22',
-  Typed_effect: ['YAH! 2k22', '24-hour hackathon'],
+  Typed_effect: [
+    'YAH! 2k22',
+    '24-hour hackathon',
+    '70k worth of Cash Prize!',
+    'Amazing Internship opportunity',
+  ],
   SHORT_DESCRIPTION:
-    "Yet Another Hackathon 2k22 conducted by the SVCE ACM Student Chapter is back for it's third edition. Gear up for the 24-hour hackathon!",
+    "Yet Another Hackathon 2k22 conducted by the ACM Student Chapter of Sri Venkateswara College of Engineering is back for it's third edition. Gear up for the 24-hour hackathon!",
 
   IMG_SRC: YahLogo,
   HACKERS_REGISTRATION_FORM_LINK: 'https://localhost:3000',
@@ -37,13 +46,12 @@ const MIDDLE_SECTION = {
 };
 
 const Domain = [
-  'Agriculture, FoodTech & Rural Development',
   'Clean & Green Technology',
-  'Blockchain & Cybersecurity',
-  'MedTech / BioTech / HealthTech',
+  'Agriculture, FoodTech & Rural Development',
+  'Blockchain / FinanceTech',
   'Fitness & Sports',
-  'Smart Vehicles/ Smart Education',
-  // 'Finance and technology',
+  'MedTech / BioTech / HealthTech',
+  'Smart Education',
 ];
 
 /** Instructions
@@ -53,7 +61,7 @@ const Domain = [
  */
 
 const sponsorLogos = [
-  // [{ src: cfc }, { src: sublime }, { src: echoAR }], //Array 1
+  [{ src: CasaRetail }, { src: MadStreetDen },{ src: Flip }], //Array 1
   // [{ src: taskade }, { src: Replit }, { src: qoom }], //Array 2
   // [{ src: interviewC }, { src: pass }, { src: glimpse }], //Array 3
   // [{ src: egg }, { src: ll }, { src: ACF }], //Array 4
@@ -73,7 +81,12 @@ const frequentlyAskedQuestions = [
       {
         label: 'How much does it cost?',
         content:
-          "Rs. 499 per person. We'll take care of all your meals & refreshments! You'll pay this only if you're selected for the on-campus round. Online round is free of cost!",
+          "Rs. 650 per person. We'll take care of all your meals & refreshments! You'll pay this only if you're selected for the on-campus round. Online round is free of cost!",
+      },
+      {
+        label: 'Will we get any discounts?',
+        content:
+          'As an initiative taken by the SVCE-ACM W to promote equal participation, we are offering Rs.150 per person discount if your team comprises of only women.',
       },
       {
         label: 'What do we need to bring?',
@@ -81,49 +94,58 @@ const frequentlyAskedQuestions = [
           "A hackathon is a very hands-on and grassroots event. You will need to bring your laptops, mobile phones and any other devices that you need to design your product. But above all, come in with a proper night's sleep. Make sure you have your college ID card and your covid vaccination certificate.",
       },
       {
-        label: 'How many people can be on each team?',
+        label: 'Can I use frameworks and APIs?',
         content:
-          'You can have a team of 3-5 members from the same or from different institutions. We recommend to have a balanced team with a mixture of designers and developers.',
+          'Of course! As long as your final product is something original, there is no harm in using something to help you achieve that.',
       },
+
       {
-        label: 'When is the last date to register',
-        content:
-          "Registrations will close at 11:59 PM, 3rd June, 2022. We will announce the shortlisted teams shortly after that. If selected, you'll be expected to make the payment before 8th June, 2022.",
+        label: 'Is there reimbursement for travel?',
+        content: 'No, we do not offer any reimbursement for travel expenses.',
       },
+
       {
         label: 'How will the shortlisting be done in the online round?',
         content:
           'Our team will evaluate both your abstract to test your problem solving skills and creativity as well as your GitHub (Or GitLab or BitBucket or anything else). Based on a combination of both of these, we will shortlist teams.',
       },
       {
-        label: 'What do I get out of this hackathon?',
+        label: 'Will I get help if I face any problems?',
         content:
-          'You get a great opportunity for peer networking, compete to win massive cash prizes, chances to gain internships or job offers from some cool companies, an amazing learning experience, punny jokes and some awesome memories. ;)',
+          'Of course! We have a lot of mentors coming in from many different fields and all of them are there to help you out.',
       },
     ],
     [
       {
-        label: 'Is there reimbursement for travel?',
-        content: 'No, we do not offer any reimbursement for travel expenses.',
+        label: 'What do I get out of this hackathon?',
+        content:
+          'You get a great opportunity for peer networking, compete to win massive cash prizes, chances to gain internships or job offers from some cool companies, an amazing learning experience, punny jokes and some awesome memories. ;)',
       },
       {
-        label: 'Who owns my project and IP?',
+        label: 'Where is the hackathon being conducted?',
         content:
-          'You do! The team that develops the project is the owner of the project and IP. You can make it open source, form a company with others you met during the event or put it in a repo and never use it again :P. Its upto YOU!',
+          'It is being conducted at Sri Venkateswara College of Engineering, Sriperumbudur. Please scroll down to find the exact location.',
+      },
+
+      {
+        label: 'When is the last date to register',
+        content:
+          "Registrations will close at 11:59 PM, 31st May, 2022. We will announce the shortlisted teams shortly after that. If selected, you'll be expected to make the payment before 3rd June, 2022.",
       },
       {
-        label: 'Can I use frameworks and APIs?',
+        label: 'How many people can be on each team?',
         content:
-          'Of course! As long as your final product is something original, there is no harm in using something to help you achieve that.',
+          'You can have a team of 3-5 members from the same or from different institutions. We recommend to have a balanced team with a mixture of designers and developers.',
       },
+      {
+        label: 'What about food?',
+        content:
+          "We'll be providing you with lunch & dinner on day 1 and breakfast & lunch on day 2. We'll also have a stash of snacks and refreshments available for everyone round the clock.",
+      },
+
       {
         label: 'Is there Wi-Fi?',
         content: 'YES!',
-      },
-      {
-        label: 'Will I get help if I face any problems?',
-        content:
-          'Of course! We have a lot of mentors coming in from many different fields and all of them are there to help you out.',
       },
 
       {
@@ -132,9 +154,10 @@ const frequentlyAskedQuestions = [
           "Our judges will be evaluating teams on the 3 I's - Innovation (Originality & Creativity of the idea), Implementation (Technical challenge & completeness of the project), and Impact (Business or Social Impact.)",
       },
       {
-        label: 'What about food?',
+        label:
+          'Do we have to implement the same idea that was mentioned in our abstract?',
         content:
-          "We'll be providing you with lunch & dinner on day 1 and breakfast & lunch on day 2. We'll also have a stash of snacks and refreshments available for everyone round the clock.",
+          "No it's not necessary for you to implement the same idea mentioned in your abstract. You are free to implement a different idea on the day of the hackathon",
       },
     ],
   ],

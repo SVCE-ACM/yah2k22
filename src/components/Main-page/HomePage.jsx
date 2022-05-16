@@ -23,6 +23,9 @@ import {
 } from '../../Module/General';
 
 import AcmSvce from '../../Module/Assets/acm/svce-acm.jpeg';
+import AcmWSvce from '../../Module/Assets/acm/acm-w.jpeg';
+
+import { TopSection2 } from '../top-section-2/TopSection2.jsx';
 
 // javascript Map for sponsors
 
@@ -102,6 +105,35 @@ export default function HomePage() {
             </div>
           </Col>
         </Row>
+        <Row className='logoSection' style={{ paddingTop: '8px' }}>
+          <Col className='info-div' sm={12} lg={6} md={6}>
+            <TopSection2 />
+          </Col>
+          <Col sm={12} lg={6} md={6}>
+            <div
+              style={{
+                height: '315px',
+                // marginTop: '30px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <img
+                src={AcmWSvce}
+                style={{
+                  width: match ? '335px' : '435px',
+                  marginTop: match ? '0px' : '50px',
+                  // height: '140px',
+                  // paddingLeft: match ? '30px' : '0px',
+                  // paddingRight: match ? '30px' : '0px',
+                }}
+                alt='acm-svce'
+              />
+            </div>
+          </Col>
+        </Row>
         {/* ********Domains here ***** */}
         <Box m={10} />
         <Row className='prizesection' id='domains'>
@@ -128,8 +160,8 @@ export default function HomePage() {
 
         <Row className='sponsorSection' id='sponsors'>
           <SponsorsHead />
-          <SponsorUS />
           {sponsorLogos.map(SponsorGroup)}
+          <SponsorUS />
         </Row>
         {/* ********Sponsors ending here ***** */}
 

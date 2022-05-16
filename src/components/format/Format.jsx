@@ -15,10 +15,11 @@ const Format = () => {
         The first step is to fill the registration form with your abstract. For
         the abstract, pick an impactful problem statement from the domain of
         your choice. Please note that the abstract that you submit will be
-        highly instrumental in determining your selection for the next round.
-        Your Github links (Or GitLab, BitBucket or even LeetCode) will sell us
-        on your coding proficiency. If you don't have one of those, link us to
-        something else that you've made, maybe an app or a website.
+        highly instrumental in determining your selection for the next round. It
+        is a bonus if you could add your Github links (Or GitLab, BitBucket or
+        even LeetCode) that will sell us on your coding proficiency. If you
+        don't have one of those, link us to something else that you've made,
+        maybe an app or a website.
       </p>
       <h2>2. The 24-Hour Hackathon</h2>
       <p>

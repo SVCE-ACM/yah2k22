@@ -227,7 +227,8 @@ const RegisterView = () => {
                     />
                     <Field
                       name={`player${index + 1}.github_url`}
-                      label={'GitHub URL'}
+                      label={'GitHub and Coding profiles (If any)'}
+                      required={false}
                       as={CustomTextField}
                     />
                   </Grid>
@@ -281,13 +282,12 @@ const RegisterView = () => {
                   name={`domain`}
                   label={'Select domain'}
                   items={[
-                    'Agriculture, FoodTech & Rural Development',
                     'Clean & Green Technology',
-                    'Blockchain & Cybersecurity',
-                    'MedTech / BioTech / HealthTech',
+                    'Agriculture, FoodTech & Rural Development',
+                    'Blockchain / FinanceTech',
                     'Fitness & Sports',
-                    'Smart Vehicles/ Smart Education',
-                    // 'Finance and technology',
+                    'MedTech / BioTech / HealthTech',
+                    'Smart Education',
                   ]}
                   as={CustomDropDown}
                 />
