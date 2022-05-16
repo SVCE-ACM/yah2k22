@@ -222,9 +222,10 @@ export default function HomePage() {
           >
             Venue
           </h3>
+
           <iframe
             title='Venue'
-            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15840.307801423798!2d79.96493564991258!3d12.992301798522979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a528d5e121cc659%3A0x4a606486fdc3c3d8!2sSri%20Venkateswara%20College%20of%20Engineering%20(Autonomous)!5e0!3m2!1sen!2sin!4v1652586320047!5m2!1sen!2sin'
+            src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7775.5084565668685!2d79.9758079381529!3d12.987565279809372!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3294da3faad96a9!2sSri%20Venkateswara%20College%20of%20Engineering%20(SVCE)!5e0!3m2!1sen!2sin!4v1652712108679!5m2!1sen!2sin'
             width={match ? '400' : '800'}
             height={match ? '300' : '500'}
             style={{ border: 0 }}
