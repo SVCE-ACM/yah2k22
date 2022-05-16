@@ -14,8 +14,8 @@ import Flip from './Assets/sponsers/flip.jpeg';
 const TOP_SECTION = {
   TITLE: 'Yet Another Hackathon! 2k22',
   Typed_effect: [
-    'YAH! 2k22',
     '24-hour hackathon',
+    'June 11 & 12',
     '70k worth of Cash Prize!',
     'Amazing Internship opportunity',
   ],
@@ -122,9 +122,9 @@ const frequentlyAskedQuestions = [
           'You get a great opportunity for peer networking, compete to win massive cash prizes, chances to gain internships or job offers from some cool companies, an amazing learning experience, punny jokes and some awesome memories. ;)',
       },
       {
-        label: 'Where is the hackathon being conducted?',
+        label: 'When and where is the hackathon being conducted?',
         content:
-          'It is being conducted at Sri Venkateswara College of Engineering, Sriperumbudur. Please scroll down to find the exact location.',
+          'It is being conducted at Sri Venkateswara College of Engineering, Sriperumbudur on June 11 & 12. Please scroll down to find the exact location.',
       },
 
       {
