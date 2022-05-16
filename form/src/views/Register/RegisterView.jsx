@@ -26,6 +26,7 @@ import { db } from 'db/firebaseapp';
 import CustomDialog from 'common/CustomDialog';
 import CustomSnackbar from 'common/CustomSnackbar';
 import { snackBarStore } from 'stores/snackbarStore';
+import Footer from 'common/Footer/footer';
 
 const RegisterView = () => {
   const count = teamCountStore((state) => state.count);
@@ -106,6 +107,7 @@ const RegisterView = () => {
                 <Field
                   name={`team_name`}
                   label={'Enter Team name'}
+                  required={true}
                   as={CustomTextField}
                 />
               </Grid>
@@ -114,6 +116,7 @@ const RegisterView = () => {
                   name={`count`}
                   label={'No. of team members'}
                   items={[3, 4, 5]}
+                  required={true}
                   as={CustomDropDown}
                 />
               </Grid>
@@ -194,6 +197,7 @@ const RegisterView = () => {
                   <Grid item xs={12} sm={10}>
                     <Field
                       name={`player${index + 1}.name`}
+                      required={true}
                       label={
                         index === 0
                           ? 'Enter Team Leader name'
@@ -205,16 +209,19 @@ const RegisterView = () => {
                       name={`player${index + 1}.college`}
                       label={`College name`}
                       as={CustomTextField}
+                      required={true}
                     />
                     <Field
                       name={`player${index + 1}.email`}
                       label={'Email Address'}
                       as={CustomTextField}
+                      required={true}
                     />
                     <Field
                       name={`player${index + 1}.phone`}
                       label={'Phone Number'}
                       type={'number'}
+                      required={true}
                       // to hide the stepper in the right and remove its functionality as it is not needed
                       step='0.01'
                       as={CustomTextField}
@@ -222,6 +229,7 @@ const RegisterView = () => {
                     <Field
                       name={`player${index + 1}.gender`}
                       label={'Gender'}
+                      required={true}
                       items={['Male', 'Female']}
                       as={CustomDropDown}
                     />
@@ -229,6 +237,8 @@ const RegisterView = () => {
                       name={`player${index + 1}.github_url`}
                       label={'GitHub and Coding profiles (If any)'}
                       required={false}
+                      multiline={true}
+                      rows={5}
                       as={CustomTextField}
                     />
                   </Grid>
@@ -289,6 +299,7 @@ const RegisterView = () => {
                     'MedTech / BioTech / HealthTech',
                     'Smart Education',
                   ]}
+                  required={true}
                   as={CustomDropDown}
                 />
               </Grid>
@@ -296,6 +307,7 @@ const RegisterView = () => {
                 <Field
                   name={`prob_st`}
                   label={'Enter Problem Statement'}
+                  required={true}
                   as={CustomTextField}
                 />
               </Grid>
@@ -305,6 +317,7 @@ const RegisterView = () => {
                   label={'Enter your abstract'}
                   multiline={true}
                   rows={match ? 15 : 20}
+                  required={true}
                   as={CustomTextField}
                 />
               </Grid>
@@ -319,6 +332,7 @@ const RegisterView = () => {
         message={snackbar.message ?? 'Server error'}
         severity='error'
       />
+      <Footer socials={true} />
     </div>
   );
 };
@@ -348,7 +362,6 @@ const CustomDropDown = (props) => {
     <>
       <TextField
         select
-        required={true}
         defaultValue=''
         {...props}
         variant='outlined'
