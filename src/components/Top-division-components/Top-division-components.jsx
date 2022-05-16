@@ -48,7 +48,7 @@ function Myinfo() {
         Registrations opening on 17th of May
       </h2> */}
 
-      <a href={TOP_SECTION.REGISTRATION_FORM_LINK} >
+      <a href={TOP_SECTION.REGISTRATION_FORM_LINK}>
         <Btn
           style={{
             width: '22rem',
