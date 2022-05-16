@@ -15,7 +15,7 @@ const TOP_SECTION = {
   TITLE: 'Yet Another Hackathon! 2k22',
   Typed_effect: [
     '24-hour hackathon',
-    'June 11 & 12',
+    'June 11 and 12',
     '70k worth of Cash Prize!',
     'Amazing Internship opportunity',
   ],
