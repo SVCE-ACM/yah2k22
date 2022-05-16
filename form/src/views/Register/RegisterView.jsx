@@ -341,7 +341,6 @@ const CustomTextField = (props) => {
   return (
     <TextField
       variant='outlined'
-      required={true}
       InputProps={{
         style: {
           borderRadius: '16px',
@@ -453,7 +452,7 @@ function FormikStepper({ children, ...props }) {
         }
       }}
     >
-      {({ isSubmitting, submitForm }) => (
+      {({ isSubmitting, submitForm, values }) => (
         <Form>
           <Stepper alternativeLabel activeStep={step} sx={{ marginBottom: 4 }}>
             {childrenArray.map((child, index) => (
@@ -495,9 +494,15 @@ function FormikStepper({ children, ...props }) {
               sx={{ borderRadius: '12px' }}
               disabled={isSubmitting}
               type={!isLastStep() ? 'submit' : undefined}
-              onClick={() => {
+              onClick={async () => {
                 if (isLastStep()) {
-                  setOpenDialog(true);
+                  if (values.domain && values.prob_st && values.abstract)
+                    setOpenDialog(true);
+                  else {
+                    snackbar.setmessage('Fill the form completely');
+                    snackbar.setIsError(true);
+                    snackbar.setOpen(true);
+                  }
                 }
               }}
             >
