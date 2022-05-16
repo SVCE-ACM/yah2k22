@@ -38,7 +38,7 @@ function Myinfo() {
         h
       </div> */}
 
-      <h2
+      {/* <h2
         style={{
           marginTop: '3rem',
           // fontSize: '1.5rem',
@@ -46,9 +46,9 @@ function Myinfo() {
         }}
       >
         Registrations opening on 17th of May
-      </h2>
+      </h2> */}
 
-      {/* <a href={TOP_SECTION.HACKERS_REGISTRATION_FORM_LINK} style={{}}>
+      <a href={TOP_SECTION.REGISTRATION_FORM_LINK} >
         <Btn
           style={{
             width: '22rem',
@@ -58,7 +58,7 @@ function Myinfo() {
           type='Register '
           overlay='Register Now'
         />
-      </a> */}
+      </a>
     </div>
   );
 }

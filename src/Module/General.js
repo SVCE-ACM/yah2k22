@@ -4,7 +4,7 @@ import YahLogo from './Assets/acm/yahlogo.png';
 
 import CasaRetail from './Assets/sponsers/casa_retail.jpeg';
 import MadStreetDen from './Assets/sponsers/mad_street_den.jpeg';
-import Flip from './Assets/sponsers/flip.jpeg'
+import Flip from './Assets/sponsers/flip.jpeg';
 
 /** Put all your sponsors logo inside folder `sponsorLogos`
  * and import them in the above and update `src` in sponsorLogos
@@ -23,7 +23,7 @@ const TOP_SECTION = {
     "Yet Another Hackathon 2k22 conducted by the ACM Student Chapter of Sri Venkateswara College of Engineering is back for it's third edition. Gear up for the 24-hour hackathon!",
 
   IMG_SRC: YahLogo,
-  HACKERS_REGISTRATION_FORM_LINK: 'https://localhost:3000',
+  REGISTRATION_FORM_LINK: 'https://register-yah2k22.netlify.app',
 };
 
 const SOCIALS = {
@@ -61,7 +61,7 @@ const Domain = [
  */
 
 const sponsorLogos = [
-  [{ src: CasaRetail }, { src: MadStreetDen },{ src: Flip }], //Array 1
+  [{ src: CasaRetail }, { src: MadStreetDen }, { src: Flip }], //Array 1
   // [{ src: taskade }, { src: Replit }, { src: qoom }], //Array 2
   // [{ src: interviewC }, { src: pass }, { src: glimpse }], //Array 3
   // [{ src: egg }, { src: ll }, { src: ACF }], //Array 4
