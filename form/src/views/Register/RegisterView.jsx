@@ -234,6 +234,13 @@ const RegisterView = () => {
                       as={CustomDropDown}
                     />
                     <Field
+                      name={`player${index + 1}.yearOfStudy`}
+                      label={'Year of Study'}
+                      items={['I', 'II', 'III', 'IV']}
+                      required={true}
+                      as={CustomDropDown}
+                    />
+                    <Field
                       name={`player${index + 1}.github_url`}
                       label={'GitHub and Coding profiles (If any)'}
                       required={false}
