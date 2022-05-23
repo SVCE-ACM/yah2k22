@@ -11,7 +11,7 @@ function SponsorsHead() {
 function Sponsor(props) {
   return (
     <div className='Sponsor '>
-      <img src={props.srcx} alt='Limbo hacks'></img>
+      {props.srcx && <img src={props.srcx} alt='yah2k22'></img>}
     </div>
   );
 }
