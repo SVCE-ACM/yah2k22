@@ -16,7 +16,7 @@ const TOP_SECTION = {
   TITLE: 'Yet Another Hackathon! 2k22',
   Typed_effect: [
     '24-hour hackathon',
-    'June 11 and 12',
+    'July 30 and 31',
     '70k worth of Cash Prize!',
     'Amazing Internship opportunity',
   ],
@@ -125,13 +125,13 @@ const frequentlyAskedQuestions = [
       {
         label: 'When and where is the hackathon being conducted?',
         content:
-          'It is being conducted at Sri Venkateswara College of Engineering, Sriperumbudur on June 11 & 12. Please scroll down to find the exact location.',
+          'It is being conducted at Sri Venkateswara College of Engineering, Sriperumbudur on July 30 & 31. Please scroll down to find the exact location.',
       },
 
       {
         label: 'When is the last date to register',
         content:
-          "Registrations will close at 11:59 PM, 31st May, 2022. We will announce the shortlisted teams shortly after that. If selected, you'll be expected to make the payment before 3rd June, 2022.",
+          'Registrations will close at 11:59 PM, July 24th, 2022. We will announce the shortlisted teams shortly after that.',
       },
       {
         label: 'How many people can be on each team?',
