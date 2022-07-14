@@ -72,7 +72,7 @@ const SelectionPage = () => {
                 <TableCell>Team leader name</TableCell>
                 <TableCell>Team leader phno</TableCell>
                 <TableCell>Year of study(TL)</TableCell>
-                <TableCell>Problem Statement</TableCell>
+                <TableCell sx={{ width: 500 }}>Problem Statement</TableCell>
                 <TableCell sx={{ width: 700 }}>Abstract</TableCell>
               </TableRow>
             </TableHead>
