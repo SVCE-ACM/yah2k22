@@ -72,8 +72,8 @@ const SelectionPage = () => {
                 <TableCell>Team leader name</TableCell>
                 <TableCell>Team leader phno</TableCell>
                 <TableCell>Year of study(TL)</TableCell>
-                <TableCell>Problem Statement</TableCell>
-                <TableCell>Abstract</TableCell>
+                <TableCell sx={{ width: 500 }}>Problem Statement</TableCell>
+                <TableCell sx={{ width: 600 }}>Abstract</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -135,10 +135,16 @@ const SelectionPage = () => {
                   <TableCell sx={{ verticalAlign: 'top' }}>
                     {row.team_leader_yof}
                   </TableCell>
-                  <TableCell sx={{ verticalAlign: 'top' }}>
+                  <TableCell sx={{ verticalAlign: 'top', minWidth: 500 }}>
                     {row.prob_st}
                   </TableCell>
-                  <TableCell sx={{ verticalAlign: 'top', textAlign: 'left' }}>
+                  <TableCell
+                    sx={{
+                      verticalAlign: 'top',
+                      textAlign: 'left',
+                      minWidth: 600,
+                    }}
+                  >
                     {row.abstract}
                   </TableCell>
                 </TableRow>
