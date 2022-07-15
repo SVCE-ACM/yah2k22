@@ -45,6 +45,7 @@ const SelectionPage = () => {
         temp.push({
           abstract: docData.abstract,
           prob_st: docData.prob_st,
+          domain: docData.domain,
           team_name: docData.team_name,
           team_leader_name: docData.player1.name,
           team_leader_phno: docData.player1.phone,
@@ -73,6 +74,7 @@ const SelectionPage = () => {
                 <TableCell>Team leader name</TableCell>
                 <TableCell>Team leader phno</TableCell>
                 <TableCell>Year of study(TL)</TableCell>
+                <TableCell>Domain</TableCell>
                 <TableCell sx={{ width: 500 }}>Problem Statement</TableCell>
                 <TableCell sx={{ width: 600 }}>Abstract</TableCell>
               </TableRow>
@@ -138,6 +140,9 @@ const SelectionPage = () => {
                   </TableCell>
                   <TableCell sx={{ verticalAlign: 'top' }}>
                     {row.team_leader_yof}
+                  </TableCell>
+                  <TableCell sx={{ verticalAlign: 'top' }}>
+                    {row.domain}
                   </TableCell>
                   <TableCell sx={{ verticalAlign: 'top', minWidth: 500 }}>
                     {row.prob_st}
