@@ -52,6 +52,7 @@ const SelectionPage = () => {
           team_leader_email: docData.player1.email,
           team_leader_college: docData.player1.college,
           team_leader_yof: docData.player1.yearOfStudy,
+          team_leader_code_profile: docData.player1.github_url,
         });
       });
       setData(temp);
@@ -74,6 +75,7 @@ const SelectionPage = () => {
                 <TableCell>Team leader name</TableCell>
                 <TableCell>Team leader phno</TableCell>
                 <TableCell>Year of study(TL)</TableCell>
+                <TableCell>Coding profiles</TableCell>
                 <TableCell>Domain</TableCell>
                 <TableCell sx={{ width: 500 }}>Problem Statement</TableCell>
                 <TableCell sx={{ width: 600 }}>Abstract</TableCell>
@@ -140,6 +142,9 @@ const SelectionPage = () => {
                   </TableCell>
                   <TableCell sx={{ verticalAlign: 'top' }}>
                     {row.team_leader_yof}
+                  </TableCell>
+                  <TableCell sx={{ verticalAlign: 'top' }}>
+                    {row.team_leader_code_profile}
                   </TableCell>
                   <TableCell sx={{ verticalAlign: 'top' }}>
                     {row.domain}
