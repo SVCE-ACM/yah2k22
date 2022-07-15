@@ -64,7 +64,7 @@ const SelectionPage = () => {
       <div>
         {console.log(data)}
         <TableContainer component={Paper}>
-          <Table>
+          <Table sx={{ width: '100vw' }}>
             <TableHead>
               <TableRow>
                 <TableCell>Select</TableCell>
