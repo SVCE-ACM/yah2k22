@@ -69,6 +69,7 @@ const SelectionPage = () => {
               <TableRow>
                 <TableCell>Select</TableCell>
                 <TableCell>Team name</TableCell>
+                <TableCell>College name</TableCell>
                 <TableCell>Team leader name</TableCell>
                 <TableCell>Team leader phno</TableCell>
                 <TableCell>Year of study(TL)</TableCell>
@@ -125,6 +126,9 @@ const SelectionPage = () => {
                   </TableCell>
                   <TableCell sx={{ verticalAlign: 'top' }}>
                     {row.team_name}
+                  </TableCell>
+                  <TableCell sx={{ verticalAlign: 'top' }}>
+                    {row.team_leader_college}
                   </TableCell>
                   <TableCell sx={{ verticalAlign: 'top' }}>
                     {row.team_leader_name}
