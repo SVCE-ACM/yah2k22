@@ -52,7 +52,7 @@ const SelectionPage = () => {
           team_leader_email: docData.player1.email,
           team_leader_college: docData.player1.college,
           team_leader_yof: docData.player1.yearOfStudy,
-          team_leader_code_profile: docData.player1.github_url,
+          team_leader_code_profile: docData.player1.github_url ?? 'no profile',
         });
       });
       setData(temp);
