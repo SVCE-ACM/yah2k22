@@ -64,7 +64,7 @@ const SelectionPage = () => {
       <div>
         {console.log(data)}
         <TableContainer component={Paper}>
-          <Table sx={{ width: '100vw' }}>
+          <Table>
             <TableHead>
               <TableRow>
                 <TableCell>Select</TableCell>
@@ -72,8 +72,8 @@ const SelectionPage = () => {
                 <TableCell>Team leader name</TableCell>
                 <TableCell>Team leader phno</TableCell>
                 <TableCell>Year of study(TL)</TableCell>
-                <TableCell sx={{ width: 500 }}>Problem Statement</TableCell>
-                <TableCell sx={{ width: 600 }}>Abstract</TableCell>
+                <TableCell>Problem Statement</TableCell>
+                <TableCell>Abstract</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
