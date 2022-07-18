@@ -86,7 +86,7 @@ const SelectionPage = () => {
               {data.map((row,index) => (
                 <TableRow key={row.prob_st}>
                   <TableCell sx={{ verticalAlign: 'top' }}>
-                    {index}
+                    {index+1}
                   </TableCell>
                   <TableCell sx={{ verticalAlign: 'top' }}>
                     <Tooltip title='Select the team for finale'>
