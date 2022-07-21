@@ -6,6 +6,7 @@ import './App.css';
 import RegisterView from 'views/Register/RegisterView';
 import SuccessPage from 'views/Success/SuccessPage';
 import SelectionPage from 'views/Selection/Selection';
+import SelectedPage from './views/Selected/Selected';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<RegisterView />} />
         <Route path='/done' element={<SuccessPage />} />
         <Route path='/very-secret-route/secret' element={<SelectionPage />} />
+        <Route path='/very-secret-route/secret/selected' element={<SelectedPage />} />
       </Routes>
     </div>
   );

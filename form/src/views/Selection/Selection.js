@@ -64,6 +64,7 @@ const SelectionPage = () => {
   if (password === process.env.REACT_APP_passwordForSelection)
     return (
       <div>
+         <p>All Registrations</p>
         {console.log(data)}
         <TableContainer component={Paper}>
           <Table>
@@ -177,6 +178,14 @@ const SelectionPage = () => {
           }}
         >
           Download as excel sheet
+        </Button>
+        <Button
+          variant='outlined'
+          onClick={() => {
+            window.open(`${process.env.REACT_APP_SELECTED_ROUTE}`);
+          }}
+        >
+          See Selected Teams
         </Button>
         <CustomSnackbar
           open={snackbar.open}
