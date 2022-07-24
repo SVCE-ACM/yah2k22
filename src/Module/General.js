@@ -24,7 +24,7 @@ const TOP_SECTION = {
     "Yet Another Hackathon 2k22 conducted by the ACM Student Chapter of Sri Venkateswara College of Engineering is back for it's third edition. Gear up for the 24-hour hackathon!",
 
   IMG_SRC: YahLogo,
-  REGISTRATION_FORM_LINK: 'https://register-yah2k22.netlify.app',
+  // REGISTRATION_FORM_LINK: 'https://register-yah2k22.netlify.app',
 };
 
 const SOCIALS = {
