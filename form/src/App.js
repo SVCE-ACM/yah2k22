@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import CustomAppbar from 'common/CustomAppbar';
 import './App.css';
 // import RegisterView from 'views/Register/RegisterView';
-import SuccessPage from 'views/Success/SuccessPage';
+// import SuccessPage from 'views/Success/SuccessPage';
 import SelectionPage from 'views/Selection/Selection';
 import SelectedPage from './views/Selected/Selected';
 import RegisterClosed from './views/RegisterClosed/RegisterClosed';
