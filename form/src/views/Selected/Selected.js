@@ -108,12 +108,10 @@ const downloadExcel = (data) => {
                       {row.team_leader_code_profile}
                     </TableCell>
                     <TableCell sx={{ verticalAlign: 'top' }}>
-                     { [...Array(row.team_count).map((_, index)=><Typography>
-                      *{
-                        console.log(row.member_details[index][`player${index+1}`].name)
-                      }
+                     { [...Array(row.team_count)].map((_, index)=><Typography>
+                      
                     {`Member ${index+1} name:`}  {row.member_details[index][`player${index+1}`].name}
-                     </Typography>)]}
+                     </Typography>)}
                     </TableCell>
                   </TableRow>
                 ))}
