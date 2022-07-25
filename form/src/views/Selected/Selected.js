@@ -60,9 +60,9 @@ const downloadExcel = (data) => {
                   <TableCell sx={{ width: 500 }}>Problem Statement</TableCell>
                   <TableCell sx={{ width: 600 }}>Abstract</TableCell>
                   <TableCell>Domain</TableCell>
+                  <TableCell>Member details</TableCell>
                   <TableCell>Year of study(TL)</TableCell>
                   <TableCell>Coding profiles</TableCell>
-                  <TableCell>Member details</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -102,17 +102,18 @@ const downloadExcel = (data) => {
                       {row.domain}
                     </TableCell>
                     <TableCell sx={{ verticalAlign: 'top' }}>
+                     { [...Array(row.team_count)].map((_, index)=><Typography>
+                      
+                    {`Member ${index+1} name:`}  {row.member_details[index].name}
+                     </Typography>)}
+                    </TableCell>
+                    <TableCell sx={{ verticalAlign: 'top' }}>
                       {row.team_leader_yof}
                     </TableCell>
                     <TableCell sx={{ verticalAlign: 'top' }}>
                       {row.team_leader_code_profile}
                     </TableCell>
-                    <TableCell sx={{ verticalAlign: 'top' }}>
-                     { [...Array(row.team_count)].map((_, index)=><Typography>
-                      
-                    {`${index ===0 ? 'Leader': 'Member'} ${index ===0 ? '':`${index}`} name:`}  {row.member_details[index].name}
-                     </Typography>)}
-                    </TableCell>
+                    
                   </TableRow>
                 ))}
               </TableBody>
