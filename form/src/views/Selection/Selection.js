@@ -53,6 +53,8 @@ const SelectionPage = () => {
           team_leader_college: docData.player1.college,
           team_leader_yof: docData.player1.yearOfStudy,
           team_leader_code_profile: docData.player1.github_url ?? 'no profile',
+          team_count: docData.count,
+          member_details: [...Array(docData.count)].map((_,index)=>docData[`player${index+1}`]),
         });
       });
       setData(temp);
@@ -81,6 +83,7 @@ const SelectionPage = () => {
                 <TableCell>Domain</TableCell>
                 <TableCell sx={{ width: 500 }}>Problem Statement</TableCell>
                 <TableCell sx={{ width: 600 }}>Abstract</TableCell>
+                <TableCell>Count</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -165,6 +168,9 @@ const SelectionPage = () => {
                     }}
                   >
                     {row.abstract}
+                  </TableCell>
+                  <TableCell sx={{ verticalAlign: 'top' }}>
+                    {row.team_count}
                   </TableCell>
                 </TableRow>
               ))}
