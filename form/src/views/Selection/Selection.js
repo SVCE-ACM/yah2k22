@@ -31,6 +31,7 @@ const downloadExcel = (data) => {
 const SelectionPage = () => {
   const [password, setPassword] = useState('');
   const [data, setData] = useState([]);
+  // const [participantsDetails, setParticipantsDetails] = useState([]);
 
   const snackbar = snackBarStore((state) => state);
 
@@ -38,6 +39,7 @@ const SelectionPage = () => {
     async function initialiseData() {
       const collectionRef = collection(db, 'yah_entry');
       const temp = [];
+      // const temp1 = [];
       const querySnapshot = await getDocs(collectionRef);
       querySnapshot.forEach((doc) => {
         const docData = doc.data();
@@ -56,6 +58,10 @@ const SelectionPage = () => {
           team_count: docData.count,
           member_details: [...Array(docData.count)].map((_,index)=>docData[`player${index+1}`]),
         });
+        // temp1.push()
+        // [...Array(docData.count)].forEach((_,index)=>{
+        //   temp1.push(docData[`player${index+1}`])
+        // })
       });
       setData(temp);
     }
@@ -184,6 +190,14 @@ const SelectionPage = () => {
           }}
         >
           Download as excel sheet
+        </Button>
+        <Button
+          variant='outlined'
+          onClick={() => {
+            downloadExcel(data.member_details);
+          }}
+        >
+          Download Participants details as excel sheet
         </Button>
         <Button
           variant='outlined'
