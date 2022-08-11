@@ -58,6 +58,7 @@ const SelectionPage = () => {
           member_details: [...Array(docData.count)].map((_,index)=>docData[`player${index+1}`]),
         });
         [...Array(docData.count)].forEach((_,index)=>{
+          if(docData[`player${index+1}`])
           temp1.push(docData[`player${index+1}`]);
         });
         console.log(temp1)
