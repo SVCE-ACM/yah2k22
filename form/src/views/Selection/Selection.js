@@ -43,7 +43,6 @@ const SelectionPage = () => {
       const querySnapshot = await getDocs(collectionRef);
       querySnapshot.forEach((doc) => {
         const docData = doc.data();
-        console.log(docData);
         temp.push({
           abstract: docData.abstract,
           prob_st: docData.prob_st,
@@ -61,6 +60,7 @@ const SelectionPage = () => {
         [...Array(docData.count)].forEach((_,index)=>{
           temp1.push(docData[`player${index+1}`]);
         });
+        console.log(temp1)
       });
       setData(temp);
       setParticipantsDetails(temp1)
@@ -194,6 +194,7 @@ const SelectionPage = () => {
         <Button
           variant='outlined'
           onClick={() => {
+            console.log(participantsDetails);
             downloadExcel(participantsDetails);
           }}
         >
